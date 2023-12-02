@@ -1,0 +1,59 @@
+[Config]
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.CompileOnBackground=0
+Compilator.ProgSaveAll=0
+Compilator.ProgRunSelection=0
+Compilator.LogType=0
+Compilator.LogEncoding=0
+DefaultDir=C:\TvissKin
+DefaultCP=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+HTServer=localhost
+Extensions=*.*
+[Project tree]
+TvissKin
+	+TvissKin
+		+IIfirst
+			+ArduinoANN
+				IIfirst\ArduinoANN\ArduinoANN.ino
+			+arduinoann-master
+				+arduinoann
+					IIfirst\arduinoann-master\arduinoann\arduinoann.ino
+				-duelo_arduino_esp8266_esp32
+					IIfirst\arduinoann-master\duelo_arduino_esp8266_esp32\duelo_arduino_esp8266_esp32.ino
+				-redes_neurais_V3_offline
+					IIfirst\arduinoann-master\redes_neurais_V3_offline\redes_neurais_V3_offline.ino
+				IIfirst\arduinoann-master\README.md
+			-TinyML-HelloWorld-ArduinoUno-master
+				-SineExample
+					IIfirst\TinyML-HelloWorld-ArduinoUno-master\SineExample\model.cpp
+					IIfirst\TinyML-HelloWorld-ArduinoUno-master\SineExample\model.h
+					IIfirst\TinyML-HelloWorld-ArduinoUno-master\SineExample\model_data.cpp
+					IIfirst\TinyML-HelloWorld-ArduinoUno-master\SineExample\model_data.h
+					IIfirst\TinyML-HelloWorld-ArduinoUno-master\SineExample\SineExample.ino
+				IIfirst\TinyML-HelloWorld-ArduinoUno-master\pic.jpg
+				IIfirst\TinyML-HelloWorld-ArduinoUno-master\README.md
+				IIfirst\TinyML-HelloWorld-ArduinoUno-master\train_hello_world_model.ipynb
+			IIfirst\IIfirst.md
+			IIfirst\IIfirst.md.backup
+			IIfirst\neuron.jpg
+			IIfirst\trehslojnaya-nejronnaya-set.jpg
+		-IIgestures
+		-IIhandwriting
+		-IIvoice
+		LICENSE
+		README.md
+		README.md.backup
+[Open project files]
+0=IIfirst\ArduinoANN\ArduinoANN.ino
+[Selected Project Files]
+Main=
+Selected=IIfirst\ArduinoANN\ArduinoANN.ino
+[IIfirst\ArduinoANN\ArduinoANN.ino]
+TopLine=13
+Caret=124,34
