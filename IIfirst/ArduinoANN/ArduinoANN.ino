@@ -93,237 +93,220 @@ float Accum;
 
 float Hidden[HiddenNodes];
 float Output[OutputNodes];
-float HiddenWeights[InputNodes+1][HiddenNodes];
+float HiddenWeights[InputNodes+1][HiddenNodes];       // Веса, поступающие в промежуточный слой  
 float OutputWeights[HiddenNodes+1][OutputNodes];
 float HiddenDelta[HiddenNodes];
 float OutputDelta[OutputNodes];
-float ChangeHiddenWeights[InputNodes+1][HiddenNodes];
-float ChangeOutputWeights[HiddenNodes+1][OutputNodes];
+float ChangeHiddenWeights[InputNodes+1][HiddenNodes];   // Изменения обратного распространения из скрытого слоя
+float ChangeOutputWeights[HiddenNodes+1][OutputNodes];  // Изменения обратного распространения с выходов в скрытый слой
 
 void setup()
 {
-  Serial.begin(9600);
-  randomSeed(analogRead(3));
-  ReportEvery1000 = 1;
-  for(p=0; p<PatternCount; p++) 
-  {    
-    RandomizedIndex[p] = p ;
-  }
+   Serial.begin(9600);
+   randomSeed(analogRead(3));
+   ReportEvery1000 = 1;
+   for(p=0; p<PatternCount; p++) 
+   {    
+      RandomizedIndex[p] = p ;
+   }
 }  
 
 void loop ()
 {
-  // Инициализируем и изменяем скрытые веса 
-  for( i = 0 ; i < HiddenNodes ; i++ ) 
-  {    
-    for( j = 0 ; j <= InputNodes ; j++ ) 
-    { 
-      ChangeHiddenWeights[j][i] = 0.0 ;
-      Rando = float(random(100))/100;
-      HiddenWeights[j][i] = 2.0 * ( Rando - 0.5 ) * InitialWeightMax ;
-    }
-  }
-/******************************************************************
-* Initialize OutputWeights and ChangeOutputWeights
-******************************************************************/
-
-  for( i = 0 ; i < OutputNodes ; i ++ ) {    
-    for( j = 0 ; j <= HiddenNodes ; j++ ) {
-      ChangeOutputWeights[j][i] = 0.0 ;  
-      Rando = float(random(100))/100;        
-      OutputWeights[j][i] = 2.0 * ( Rando - 0.5 ) * InitialWeightMax ;
-    }
-  }
-  Serial.println("Initial/Untrained Outputs: ");
-  toTerminal();
-/******************************************************************
-* Begin training 
-******************************************************************/
-
-  for( TrainingCycle = 1 ; TrainingCycle < 2147483647 ; TrainingCycle++) {    
-
-/******************************************************************
-* Randomize order of training patterns
-******************************************************************/
-
-    for( p = 0 ; p < PatternCount ; p++) {
-      q = random(PatternCount);
-      r = RandomizedIndex[p] ; 
-      RandomizedIndex[p] = RandomizedIndex[q] ; 
-      RandomizedIndex[q] = r ;
-    }
-    Error = 0.0 ;
-/******************************************************************
-* Cycle through each training pattern in the randomized order
-******************************************************************/
-    for( q = 0 ; q < PatternCount ; q++ ) {    
-      p = RandomizedIndex[q];
-
-/******************************************************************
-* Compute hidden layer activations
-******************************************************************/
-
-      for( i = 0 ; i < HiddenNodes ; i++ ) {    
-        Accum = HiddenWeights[InputNodes][i] ;
-        for( j = 0 ; j < InputNodes ; j++ ) {
-          Accum += Input[p][j] * HiddenWeights[j][i] ;
-        }
-        Hidden[i] = 1.0/(1.0 + exp(-Accum)) ;
+   // Инициализируем и изменяем скрытые веса 
+   // (веса распространения входов в скрытый слой)
+   for( i = 0 ; i < HiddenNodes ; i++ ) 
+   {    
+      for( j = 0 ; j <= InputNodes ; j++ ) 
+      { 
+         // Значения изменений для обратного распространения из скрытого слоя устанавливаем в нули
+         ChangeHiddenWeights[j][i] = 0.0;
+         // Веса, поступающие в промежуточный слой устанавливаем в случайные значения
+         // (от -0.5 до +0.5)
+         Rando = float(random(100))/100;
+         HiddenWeights[j][i] = 2.0 * ( Rando - 0.5 ) * InitialWeightMax ;
       }
-
-/******************************************************************
-* Compute output layer activations and calculate errors
-******************************************************************/
-
-      for( i = 0 ; i < OutputNodes ; i++ ) {    
-        Accum = OutputWeights[HiddenNodes][i] ;
-        for( j = 0 ; j < HiddenNodes ; j++ ) {
-          Accum += Hidden[j] * OutputWeights[j][i] ;
-        }
-        Output[i] = 1.0/(1.0 + exp(-Accum)) ;   
-        OutputDelta[i] = (Target[p][i] - Output[i]) * Output[i] * (1.0 - Output[i]) ;   
-        Error += 0.5 * (Target[p][i] - Output[i]) * (Target[p][i] - Output[i]) ;
-      }
-
-/******************************************************************
-* Backpropagate errors to hidden layer
-******************************************************************/
-
-      for( i = 0 ; i < HiddenNodes ; i++ ) {    
-        Accum = 0.0 ;
-        for( j = 0 ; j < OutputNodes ; j++ ) {
-          Accum += OutputWeights[i][j] * OutputDelta[j] ;
-        }
-        HiddenDelta[i] = Accum * Hidden[i] * (1.0 - Hidden[i]) ;
-      }
-
-
-/******************************************************************
-* Update Inner-->Hidden Weights
-******************************************************************/
-
-
-      for( i = 0 ; i < HiddenNodes ; i++ ) {     
-        ChangeHiddenWeights[InputNodes][i] = LearningRate * HiddenDelta[i] + Momentum * ChangeHiddenWeights[InputNodes][i] ;
-        HiddenWeights[InputNodes][i] += ChangeHiddenWeights[InputNodes][i] ;
-        for( j = 0 ; j < InputNodes ; j++ ) { 
-          ChangeHiddenWeights[j][i] = LearningRate * Input[p][j] * HiddenDelta[i] + Momentum * ChangeHiddenWeights[j][i];
-          HiddenWeights[j][i] += ChangeHiddenWeights[j][i] ;
-        }
-      }
-
-/******************************************************************
-* Update Hidden-->Output Weights
-******************************************************************/
-
-      for( i = 0 ; i < OutputNodes ; i ++ ) {    
-        ChangeOutputWeights[HiddenNodes][i] = LearningRate * OutputDelta[i] + Momentum * ChangeOutputWeights[HiddenNodes][i] ;
-        OutputWeights[HiddenNodes][i] += ChangeOutputWeights[HiddenNodes][i] ;
-        for( j = 0 ; j < HiddenNodes ; j++ ) {
-          ChangeOutputWeights[j][i] = LearningRate * Hidden[j] * OutputDelta[i] + Momentum * ChangeOutputWeights[j][i] ;
-          OutputWeights[j][i] += ChangeOutputWeights[j][i] ;
-        }
-      }
-    }
-
-/******************************************************************
-* Every 1000 cycles send data to terminal for display
-******************************************************************/
-    ReportEvery1000 = ReportEvery1000 - 1;
-    if (ReportEvery1000 == 0)
-    {
-      Serial.println(); 
-      Serial.println(); 
-      Serial.print ("TrainingCycle: ");
-      Serial.print (TrainingCycle);
-      Serial.print ("  Error = ");
-      Serial.println (Error, 5);
-
-      toTerminal();
-
-      if (TrainingCycle==1)
+   }
+   // Инициализируем и изменяем выходные веса 
+   // (веса распространения из скрытого слоя на выходы)
+   for( i = 0 ; i < OutputNodes ; i ++ ) 
+   {    
+      for( j = 0 ; j <= HiddenNodes ; j++ ) 
       {
-        ReportEvery1000 = 999;
+         // Значения изменений для обратного распространения с выходов устанавливаем в нули
+         ChangeOutputWeights[j][i] = 0.0;  
+         // Веса, поступающие на выходы устанавливаем в случайные значения
+         // (от -0.5 до +0.5)
+         Rando = float(random(100))/100;        
+         OutputWeights[j][i] = 2.0 * ( Rando - 0.5 ) * InitialWeightMax ;
       }
-      else
+   }
+   Serial.println("Исходные/нетренированные результаты (initial/untrained outputs):");
+   toTerminal();
+
+   // *************************************************************************
+   // *                     Начать тренировку нейронной сети                  *
+   // *************************************************************************
+   for( TrainingCycle = 1 ; TrainingCycle < 2147483647 ; TrainingCycle++) 
+   { 
+      // Рандомизирем порядок обучающих шаблонов
+      for( p = 0 ; p < PatternCount ; p++) 
       {
-        ReportEvery1000 = 1000;
+         q = random(PatternCount);
+         r = RandomizedIndex[p] ; 
+         RandomizedIndex[p] = RandomizedIndex[q] ; 
+         RandomizedIndex[q] = r ;
       }
-    }    
+      Error = 0.0 ;
+    
+      // Проходим каждый тренировочный шаблон в рандомизированном порядке
+      for( q = 0 ; q < PatternCount; q++ ) 
+      {    
+         p = RandomizedIndex[q];
+         // Вычисляем активации скрытого слоя
+         for(i = 0 ; i < HiddenNodes; i++) 
+         {    
+            Accum = HiddenWeights[InputNodes][i];
+            for( j = 0 ; j < InputNodes; j++ ) 
+            {
+               Accum += Input[p][j] * HiddenWeights[j][i];
+            }
+            Hidden[i] = 1.0/(1.0 + exp(-Accum));
+         }
+         // Вычисляем активации выходного слоя и рассчитываем ошибки
+         for(i = 0; i < OutputNodes; i++) 
+         {    
+            Accum = OutputWeights[HiddenNodes][i];
+            for(j = 0; j < HiddenNodes; j++) 
+            {
+               Accum += Hidden[j] * OutputWeights[j][i];
+            }
+            Output[i] = 1.0/(1.0 + exp(-Accum));   
+            OutputDelta[i] = (Target[p][i] - Output[i]) * Output[i] * (1.0 - Output[i]);   
+            Error += 0.5 * (Target[p][i] - Output[i]) * (Target[p][i] - Output[i]);
+         }
+         // Пересчитываем обратное распространение ошибок на скрытый слой
+         for(i = 0; i < HiddenNodes; i++) 
+         {    
+            Accum = 0.0;
+            for(j = 0; j < OutputNodes; j++) 
+            {
+               Accum += OutputWeights[i][j] * OutputDelta[j];
+            }
+            HiddenDelta[i] = Accum * Hidden[i] * (1.0 - Hidden[i]);
+         }
+         // Обновляем веса от входов к скрытому слою
+         for(i = 0; i < HiddenNodes; i++) 
+         {     
+            ChangeHiddenWeights[InputNodes][i] = LearningRate * HiddenDelta[i] + Momentum * ChangeHiddenWeights[InputNodes][i];
+            HiddenWeights[InputNodes][i] += ChangeHiddenWeights[InputNodes][i];
+            for(j = 0; j < InputNodes; j++) 
+            {
+               ChangeHiddenWeights[j][i] = LearningRate * Input[p][j] * HiddenDelta[i] + Momentum * ChangeHiddenWeights[j][i];
+               HiddenWeights[j][i] += ChangeHiddenWeights[j][i];
+            }
+         }
+         // Обновляем веса от скрытого слоя к выходам
+         for( i = 0; i < OutputNodes; i ++) 
+         {    
+            ChangeOutputWeights[HiddenNodes][i] = LearningRate * OutputDelta[i] + Momentum * ChangeOutputWeights[HiddenNodes][i];
+            OutputWeights[HiddenNodes][i] += ChangeOutputWeights[HiddenNodes][i];
+            for(j = 0; j < HiddenNodes; j++) 
+            {
+               ChangeOutputWeights[j][i] = LearningRate * Hidden[j] * OutputDelta[i] + Momentum * ChangeOutputWeights[j][i];
+               OutputWeights[j][i] += ChangeOutputWeights[j][i];
+            }
+         }
+      }
+      // Каждые 1000 циклов отправляем данные на терминал для отображения
+      ReportEvery1000 = ReportEvery1000 - 1;
+      if (ReportEvery1000 == 0)
+      {
+         Serial.println(); 
+         Serial.println(); 
+         Serial.print ("TrainingCycle: ");
+         Serial.print (TrainingCycle);
+         Serial.print ("  Error = ");
+         Serial.println (Error, 5);
 
+         toTerminal();
 
-/******************************************************************
-* If error rate is less than pre-determined threshold then end
-******************************************************************/
+         if (TrainingCycle==1)
+         {
+            ReportEvery1000 = 999;
+         }
+         else
+         {
+            ReportEvery1000 = 1000;
+         }
+      }    
+      // Если значение ошибки меньше заданного порогового значения, то завершаем тренировку
+      if(Error < Success ) break;  
+   }
+   Serial.println ();
+   Serial.println(); 
+   Serial.print ("TrainingCycle: ");
+   Serial.print (TrainingCycle);
+   Serial.print ("  Error = ");
+   Serial.println (Error, 5);
 
-    if( Error < Success ) break ;  
-  }
-  Serial.println ();
-  Serial.println(); 
-  Serial.print ("TrainingCycle: ");
-  Serial.print (TrainingCycle);
-  Serial.print ("  Error = ");
-  Serial.println (Error, 5);
+   toTerminal();
 
-  toTerminal();
-
-  Serial.println ();  
-  Serial.println ();
-  Serial.println ("Training Set Solved! ");
-  Serial.println ("--------"); 
-  Serial.println ();
-  Serial.println ();  
-  ReportEvery1000 = 1;
+   Serial.println ();  
+   Serial.println ();
+   Serial.println ("Training Set Solved! ");
+   Serial.println ("--------"); 
+   Serial.println ();
+   Serial.println ();  
+   ReportEvery1000 = 1;
 }
 
 void toTerminal()
 {
-
-  for( p = 0 ; p < PatternCount ; p++ ) { 
-    Serial.println(); 
-    Serial.print ("  Training Pattern: ");
-    Serial.println (p);      
-    Serial.print ("  Input ");
-    for( i = 0 ; i < InputNodes ; i++ ) {
-      Serial.print (Input[p][i], DEC);
-      Serial.print (" ");
-    }
-    Serial.print ("  Target ");
-    for( i = 0 ; i < OutputNodes ; i++ ) {
-      Serial.print (Target[p][i], DEC);
-      Serial.print (" ");
-    }
-/******************************************************************
-* Compute hidden layer activations
-******************************************************************/
-
-    for( i = 0 ; i < HiddenNodes ; i++ ) {    
-      Accum = HiddenWeights[InputNodes][i] ;
-      for( j = 0 ; j < InputNodes ; j++ ) {
-        Accum += Input[p][j] * HiddenWeights[j][i] ;
+   for(p = 0 ; p < PatternCount ; p++) 
+   { 
+      Serial.println(); 
+      Serial.print ("  Training Pattern: ");
+      Serial.println (p);      
+      Serial.print ("  Input ");
+      for(i = 0; i < InputNodes; i++) 
+      {
+         Serial.print (Input[p][i], DEC);
+         Serial.print (" ");
       }
-      Hidden[i] = 1.0/(1.0 + exp(-Accum)) ;
-    }
-
-/******************************************************************
-* Compute output layer activations and calculate errors
-******************************************************************/
-
-    for( i = 0 ; i < OutputNodes ; i++ ) {    
-      Accum = OutputWeights[HiddenNodes][i] ;
-      for( j = 0 ; j < HiddenNodes ; j++ ) {
-        Accum += Hidden[j] * OutputWeights[j][i] ;
+      Serial.print ("  Target ");
+      for(i = 0; i < OutputNodes; i++) 
+      {
+         Serial.print (Target[p][i], DEC);
+         Serial.print (" ");
       }
-      Output[i] = 1.0/(1.0 + exp(-Accum)) ; 
-    }
-    Serial.print ("  Output ");
-    for( i = 0 ; i < OutputNodes ; i++ ) {       
-      Serial.print (Output[i], 5);
-      Serial.print (" ");
-    }
-  }
-
-
+      // Вычисляем активации скрытого слоя
+      for(i = 0; i < HiddenNodes; i++) 
+      {    
+         Accum = HiddenWeights[InputNodes][i];
+         for(j = 0; j < InputNodes; j++) 
+         {
+            Accum += Input[p][j] * HiddenWeights[j][i];
+         }
+         Hidden[i] = 1.0/(1.0 + exp(-Accum));
+      }
+      // Вычисляем активации выходного слоя и определяем ошибки
+      for(i = 0; i < OutputNodes; i++) 
+      {    
+         Accum = OutputWeights[HiddenNodes][i];
+         for(j = 0; j < HiddenNodes; j++) 
+         {
+            Accum += Hidden[j] * OutputWeights[j][i];
+         }
+         Output[i] = 1.0/(1.0 + exp(-Accum)); 
+      }
+      Serial.print ("  Output ");
+      for(i = 0; i < OutputNodes; i++) 
+      {       
+         Serial.print (Output[i], 5);
+         Serial.print (" ");
+      }
+   }
 }
 
 // ********************************************************* ArduinoANN.ino ***

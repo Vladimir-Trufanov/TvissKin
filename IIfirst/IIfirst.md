@@ -72,6 +72,413 @@
 
 
 
+```
+Исходные/нетренированные результаты (initial/untrained outputs):
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.58119 0.36335 0.49814 0.50008 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.57961 0.36977 0.52224 0.49807 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.57683 0.38252 0.53849 0.50255 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.56560 0.39041 0.52562 0.48040 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.58193 0.34777 0.51460 0.50370 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.55449 0.36544 0.50034 0.49390 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.56039 0.36279 0.52733 0.50046 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.57385 0.37529 0.50123 0.49284 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.57564 0.36759 0.51090 0.49123 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.57773 0.35419 0.49392 0.49836 
+
+TrainingCycle: 1  Error = 5.62773
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.08389 0.39694 0.24738 0.41830 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.09871 0.40267 0.27867 0.42077 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.07824 0.41426 0.28335 0.41505 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.08012 0.42539 0.27301 0.40269 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.09685 0.38794 0.26918 0.42413 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.07531 0.40840 0.24841 0.41449 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.07718 0.40587 0.27467 0.41262 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.09372 0.40535 0.25819 0.41963 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.08040 0.40480 0.25849 0.40847 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.09265 0.39218 0.25037 0.42301 
+
+TrainingCycle: 1000  Error = 0.00271
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.01751 0.00104 0.01670 0.01697 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00541 0.01725 0.00839 0.98410 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.00945 0.00063 0.99530 0.00641 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00094 0.01585 0.98762 0.99209 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.01489 0.98974 0.01380 0.01377 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00163 0.99114 0.01171 0.99022 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00002 0.98940 0.98122 0.00000 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00003 0.98020 0.98677 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.97782 0.00003 0.00908 0.00012 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.98176 0.01251 0.00032 0.98834 
+
+TrainingCycle: 2000  Error = 0.00125
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.01134 0.00095 0.01155 0.01148 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00409 0.01167 0.00577 0.98918 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.00628 0.00044 0.99700 0.00445 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00065 0.01073 0.99172 0.99477 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.01017 0.99304 0.00950 0.00953 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00100 0.99379 0.00824 0.99330 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00001 0.99285 0.98706 0.00000 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00002 0.98666 0.99063 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.98542 0.00002 0.00581 0.00006 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.98758 0.00868 0.00016 0.99187 
+
+TrainingCycle: 3000  Error = 0.00080
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.00882 0.00095 0.00928 0.00913 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00356 0.00928 0.00470 0.99135 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.00495 0.00036 0.99771 0.00362 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00053 0.00855 0.99345 0.99586 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.00814 0.99442 0.00764 0.00769 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00076 0.99493 0.00673 0.99459 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00000 0.99430 0.98960 0.00000 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00001 0.98937 0.99231 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.98848 0.00001 0.00451 0.00004 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.99000 0.00704 0.00011 0.99337 
+
+TrainingCycle: 4000  Error = 0.00058
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.00742 0.00095 0.00793 0.00776 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00325 0.00789 0.00409 0.99263 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.00421 0.00031 0.99811 0.00314 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00046 0.00728 0.99445 0.99648 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.00696 0.99523 0.00654 0.00662 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00063 0.99560 0.00583 0.99535 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00000 0.99513 0.99108 0.00000 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00001 0.99093 0.99332 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.99024 0.00001 0.00377 0.00003 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.99140 0.00608 0.00008 0.99426 
+
+TrainingCycle: 5000  Error = 0.00046
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.00649 0.00096 0.00701 0.00684 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00303 0.00696 0.00367 0.99348 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.00371 0.00029 0.99837 0.00282 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00042 0.00643 0.99512 0.99689 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.00617 0.99577 0.00580 0.00589 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00055 0.99606 0.00522 0.99586 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00000 0.99569 0.99208 0.00000 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00001 0.99198 0.99400 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.99140 0.00001 0.00329 0.00003 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.99233 0.00543 0.00007 0.99486 
+
+TrainingCycle: 5685  Error = 0.00040
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.00602 0.00096 0.00654 0.00636 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00292 0.00649 0.00346 0.99393 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.00345 0.00027 0.99851 0.00265 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00039 0.00599 0.99547 0.99710 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.00576 0.99605 0.00542 0.00552 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00051 0.99630 0.00490 0.99613 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00000 0.99599 0.99261 0.00000 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00001 0.99253 0.99437 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.99199 0.00001 0.00304 0.00002 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.99282 0.00509 0.00006 0.99518 
+
+Training Set Solved! 
+--------
+
+
+Исходные/нетренированные результаты (initial/untrained outputs):
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.71887 0.38852 0.42719 0.71868 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.70113 0.39090 0.43635 0.72129 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.70908 0.40371 0.41638 0.71233 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.69447 0.41362 0.41804 0.71015 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.66826 0.37510 0.45361 0.69955 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.70447 0.37077 0.48217 0.74270 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.70253 0.37113 0.48497 0.73336 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.70506 0.39085 0.41872 0.72132 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.69137 0.39577 0.42032 0.69703 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.67490 0.37684 0.43341 0.70092 
+
+TrainingCycle: 1  Error = 5.72007
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.19043 0.28218 0.26105 0.41993 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.18167 0.27731 0.27479 0.45756 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.18997 0.28638 0.26619 0.42958 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.18170 0.29849 0.26528 0.43598 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.20030 0.28642 0.29955 0.45045 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.18677 0.27969 0.30162 0.46863 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.20491 0.28768 0.31160 0.46519 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.17181 0.27030 0.25634 0.44395 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.19859 0.29593 0.27110 0.41636 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.18943 0.27943 0.27936 0.43811 
+
+TrainingCycle: 1000  Error = 0.00285
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.01736 0.00353 0.01196 0.01376 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00077 0.01361 0.01248 0.98568 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.01110 0.00046 0.99888 0.01025 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00445 0.01505 0.98837 0.99179 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.01770 0.98373 0.01110 0.01428 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00718 0.99122 0.01306 0.99040 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00012 0.99316 0.98191 0.00122 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00004 0.98199 0.98659 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.97445 0.00084 0.01112 0.00135 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.98044 0.01840 0.00008 0.98815 
+
+TrainingCycle: 2000  Error = 0.00126
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.01150 0.00273 0.00815 0.00902 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00045 0.00891 0.00844 0.99069 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.00744 0.00029 0.99937 0.00686 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00332 0.01009 0.99206 0.99449 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.01102 0.98898 0.00782 0.00946 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00444 0.99412 0.00861 0.99382 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00004 0.99607 0.98784 0.00124 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00002 0.98793 0.99106 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.98309 0.00059 0.00711 0.00088 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.98688 0.01267 0.00005 0.99149 
+
+TrainingCycle: 3000  Error = 0.00079
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.00908 0.00236 0.00655 0.00709 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00035 0.00696 0.00678 0.99274 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.00593 0.00022 0.99954 0.00544 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00288 0.00800 0.99365 0.99568 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.00791 0.99139 0.00637 0.00744 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00353 0.99533 0.00685 0.99521 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00002 0.99712 0.99027 0.00127 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00001 0.99042 0.99289 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.98685 0.00047 0.00552 0.00069 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.98971 0.01014 0.00003 0.99300 
+
+TrainingCycle: 4000  Error = 0.00056
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.00768 0.00214 0.00560 0.00598 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00031 0.00582 0.00582 0.99388 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.00504 0.00018 0.99963 0.00461 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00264 0.00676 0.99457 0.99637 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.00614 0.99279 0.00549 0.00628 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00308 0.99603 0.00586 0.99597 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00002 0.99766 0.99165 0.00129 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00001 0.99184 0.99392 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.98905 0.00040 0.00463 0.00059 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.99140 0.00860 0.00003 0.99391 
+
+TrainingCycle: 5000  Error = 0.00043
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.00674 0.00198 0.00495 0.00526 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00028 0.00509 0.00518 0.99464 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.00442 0.00016 0.99969 0.00406 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00247 0.00595 0.99519 0.99684 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.00503 0.99373 0.00488 0.00551 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00279 0.99651 0.00522 0.99647 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00001 0.99800 0.99257 0.00131 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00001 0.99281 0.99460 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.99049 0.00035 0.00404 0.00053 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.99252 0.00757 0.00002 0.99455 
+
+TrainingCycle: 5348  Error = 0.00040
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.00648 0.00194 0.00477 0.00506 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.00028 0.00489 0.00500 0.99484 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.00425 0.00015 0.99970 0.00391 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.00242 0.00572 0.99537 0.99697 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.00473 0.99398 0.00472 0.00529 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.00271 0.99664 0.00504 0.99660 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.00001 0.99809 0.99282 0.00132 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.00001 0.99307 0.99479 1.00000 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.99088 0.00034 0.00388 0.00051 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.99283 0.00728 0.00002 0.99473 
+
+Training Set Solved! 
+--------
+
+
+Исходные/нетренированные результаты (initial/untrained outputs):
+
+  Training Pattern: 0
+  Input 1 1 1 1 1 1 0   Target 0 0 0 0   Output 0.18678 0.48374 0.24067 0.61776 
+  Training Pattern: 1
+  Input 0 1 1 0 0 0 0   Target 0 0 0 1   Output 0.19052 0.44347 0.25894 0.61537 
+  Training Pattern: 2
+  Input 1 1 0 1 1 0 1   Target 0 0 1 0   Output 0.22546 0.48332 0.26629 0.59309 
+  Training Pattern: 3
+  Input 1 1 1 1 0 0 1   Target 0 0 1 1   Output 0.19231 0.47626 0.25982 0.62698 
+  Training Pattern: 4
+  Input 0 1 1 0 0 1 1   Target 0 1 0 0   Output 0.19358 0.47755 0.25771 0.63133 
+  Training Pattern: 5
+  Input 1 0 1 1 0 1 1   Target 0 1 0 1   Output 0.18109 0.49029 0.23431 0.64340 
+  Training Pattern: 6
+  Input 0 0 1 1 1 1 1   Target 0 1 1 0   Output 0.18593 0.48266 0.22535 0.61973 
+  Training Pattern: 7
+  Input 1 1 1 0 0 0 0   Target 0 1 1 1   Output 0.20256 0.45578 0.26928 0.61635 
+  Training Pattern: 8
+  Input 1 1 1 1 1 1 1   Target 1 0 0 0   Output 0.19861 0.49751 0.25049 0.61795 
+  Training Pattern: 9
+  Input 1 1 1 0 0 1 1   Target 1 0 0 1   Output 0.20581 0.48704 0.26850 0.63034 
+
+TrainingCycle: 1  Error = 5.12088
+
+  Training Pattern: 0
+``` 
+
+
+
 
 
 

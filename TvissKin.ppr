@@ -51,13 +51,9 @@ TvissKin
 		README.md.backup
 [Open project files]
 0=IIfirst\ArduinoANN\ArduinoANN.ino
-1=..\IttveMe\www\ttools\TEntryClass\EntryClass.php
 [Selected Project Files]
 Main=
 Selected=IIfirst\ArduinoANN\ArduinoANN.ino
 [IIfirst\ArduinoANN\ArduinoANN.ino]
-TopLine=111
-Caret=5,120
-[..\IttveMe\www\ttools\TEntryClass\EntryClass.php]
-TopLine=1
-Caret=1,4
+TopLine=277
+Caret=2,112
