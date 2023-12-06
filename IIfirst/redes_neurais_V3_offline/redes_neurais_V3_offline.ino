@@ -1,3 +1,25 @@
+// Arduino C/C++                                         *** ArduinoANN.ino ***
+
+// ****************************************************************************
+// * ArduinoANN                      Искусственная нейронная сеть для Arduino *
+// *                                                                          *
+// *  Материал взят из статьи:  http://robotics.hobbizine.com/arduinoann.html *
+// *                                                                          *
+// *   Нейронная сеть, реализованная в скетче, является всего демонстрацией и *
+// *  на самом деле не выполняет никаких реальных функций. Код включает набор *
+// *    обучающих входов и выходов, и сеть обучается этому набору до тех пор, *
+// *   пока не достигнет заранее определенного уровня точности. В этот момент *
+// * программа объявляет о победе и затем перезапускается. Попутно результаты *
+// *     обучения периодически отправляются на последовательный порт, который *
+// *           отслеживается с помощью последовательного монитора Arduino IDE *
+// *                                                                          *
+// * v2.0, 04.12.2023            Авторы:       Ralph Heymsfeld, Труфанов В.Е. *
+// * Copyright © 2022 tve        Дата создания:                    23.03.2012 *
+// ****************************************************************************
+
+
+
+
 /******************************************************************
  * ArduinoANN - An artificial neural network for the Arduino
  * All basic settings can be controlled via the Network Configuration
@@ -14,6 +36,7 @@
 #define LED2 5
 #define LED3 6
 #define LED4 7
+
 
 /******************************************************************
  * Network Configuration - customized per network 
@@ -86,6 +109,7 @@ void setup(){
     RandomizedIndex[p] = p ;
   }
 
+  /*
   pinMode(BOTAO1,INPUT_PULLUP);
   pinMode(BOTAO2,INPUT_PULLUP);
 
@@ -98,6 +122,7 @@ void setup(){
   digitalWrite(LED2,LOW);
   digitalWrite(LED3,LOW);
   digitalWrite(LED4,LOW);
+  */
 }  
 
 void loop (){
@@ -235,11 +260,11 @@ void loop (){
 
       if (TrainingCycle==1)
       {
-        ReportEvery1000 = 999;
+        ReportEvery1000 = 99;
       }
       else
       {
-        ReportEvery1000 = 1000;
+        ReportEvery1000 = 100;
       }
     }    
 
@@ -269,10 +294,10 @@ void loop (){
 
   
   
-  while(1){
-    testando();
-    delay(1000);
-  }
+  //while(1){
+  //  testando();
+  //  delay(1000);
+  //}
 }
 
 void toTerminal()
@@ -437,5 +462,3 @@ void testando(){
     delay(1000);
   }
 }
-
-

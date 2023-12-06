@@ -19,6 +19,22 @@
 
 #include <math.h>
 
+#define BOTAO1 2
+#define BOTAO2 3
+
+#define LED1 4
+#define LED2 5
+#define LED3 6
+#define LED4 7
+
+
+
+char incomingByte = ""; // for incoming serial data
+bool leitura1 = 0;
+bool leitura2 = 0;
+bool leu = 0;
+
+
 /*** 
  * Конфигурация сети настраивается для каждой сети и включает в себя два массива
  * данных - входной и целевой, которые вместе составляют таблицу истинности 
@@ -49,17 +65,30 @@
  * на самом деле никогда не достигнет его.
 ***/
 
-const int PatternCount = 10;         // Количество шаблонов - количество обучающих элементов или строк в таблице истинности. 
-const int InputNodes = 7;            // Входные узлы - количество входных нейронов. 
-const int HiddenNodes = 8;           // Скрытые узлы - количество скрытых нейронов. 
-const int OutputNodes = 4;           // Выходные узлы - количество выходных нейронов.
+//const int PatternCount = 10;         // Количество шаблонов - количество обучающих элементов или строк в таблице истинности. 
+const int PatternCount = 4;
+//const int InputNodes = 7;            // Входные узлы - количество входных нейронов. 
+const int InputNodes = 2;
+//const int HiddenNodes = 8;           // Скрытые узлы - количество скрытых нейронов. 
+const int HiddenNodes = 3;
+//const int OutputNodes = 4;           // Выходные узлы - количество выходных нейронов.
+const int OutputNodes = 4;
+
 const float LearningRate = 0.3;      // Скорость обучения - параметр, который определяет, какая часть ошибки фактически передается обратно. 
 const float Momentum = 0.9;          // Импульс - регулирует, насколько результаты предыдущей итерации влияют на текущую итерацию.
 const float InitialWeightMax = 0.5;  // Начальный максимальный вес - устанавливает максимальные начальные значения для весов.
-const float Success = 0.0004;        // Успех - конечное значение порога ошибки, при котором будет считаться, что сеть решила обучающий набор.
+
+//const float Success = 0.0004;        // Успех - конечное значение порога ошибки, при котором будет считаться, что сеть решила обучающий набор.
+const float Success = 0.001;
 
 const byte Input[PatternCount][InputNodes]= 
 {
+   {0,0},
+   {0,1},
+   {1,0},
+   {1,1}
+
+  /*
   { 1, 1, 1, 1, 1, 1, 0 },  // 0
   { 0, 1, 1, 0, 0, 0, 0 },  // 1
   { 1, 1, 0, 1, 1, 0, 1 },  // 2
@@ -70,10 +99,20 @@ const byte Input[PatternCount][InputNodes]=
   { 1, 1, 1, 0, 0, 0, 0 },  // 7 
   { 1, 1, 1, 1, 1, 1, 1 },  // 8
   { 1, 1, 1, 0, 0, 1, 1 }   // 9
+  */
 }; 
+
+// Entrada 0 0   Desejado             0 0 0 1   Saida LED1 = 0  ** LED2 = 0  ** LED3 = 0  ** LED4 = 1 
+// Вход    0 0  Что хотелось включить 0 0 0 1   Выход LED1 = 0  ** LED2 = 0  ** LED3 = 0  ** LED4 = 1 
 
 const byte Target[PatternCount][OutputNodes] = 
 {
+  { 0, 0, 0, 1 },  
+  { 0, 0, 1, 0 }, 
+  { 0, 1, 0, 0 }, 
+  { 1, 0, 0, 0 }
+
+  /*
   { 0, 0, 0, 0 },  
   { 0, 0, 0, 1 }, 
   { 0, 0, 1, 0 }, 
@@ -84,6 +123,7 @@ const byte Target[PatternCount][OutputNodes] =
   { 0, 1, 1, 1 }, 
   { 1, 0, 0, 0 }, 
   { 1, 0, 0, 1 } 
+  */
 };
 
 int i, j, p, q, r;
@@ -328,12 +368,145 @@ void loop ()
 
    Serial.println ();  
    Serial.println ();
+   Serial.println ("Training Set Solved! ");
    Serial.println ("Обучение завершено! Точность достигнута.");
    Serial.println ("--------"); 
    Serial.println ();
    Serial.println ();  
    ReportEvery1000 = 1;
+   
+   //while(1)
+   //{
+      Serial.println ("До секундной паузы! ");
+      testando();
+      delay(1000);
+      Serial.println ("После секундной паузы! ");
+      Serial.println ();
+      Serial.println ();  
+   //}
 }
+
+
+void testando()
+{
+
+   // Entrada 0 0   Desejado             0 0 0 1   Saida LED1 = 0  ** LED2 = 0  ** LED3 = 0  ** LED4 = 1 
+   // Вход    0 0  Что хотелось включить 0 0 0 1   Выход LED1 = 0  ** LED2 = 0  ** LED3 = 0  ** LED4 = 1 
+
+   //bool leitura1 = !digitalRead(BOTAO1);
+   //bool leitura2 = !digitalRead(BOTAO2);
+
+   while (Serial.available() > 0) 
+   {
+      // read the incoming byte:
+      incomingByte = Serial.read();
+
+      if(!leu)
+      {
+         if(incomingByte == '0')
+         {
+           leitura1 = 0;
+         }
+         else
+         {
+           leitura1 = 1;
+         }
+         leu = 1;
+      }
+      else
+      {
+         if(incomingByte == '0')
+         {
+            leitura2 = 0;
+         }
+         else
+         {
+            leitura2 = 1;
+         }
+         leu = 0;
+      }
+    
+      // say what you got:
+      Serial.print("I received: ");
+      Serial.println(incomingByte);
+   }
+
+  int desejado = leitura1 << 1;
+  desejado = desejado | leitura2;
+  
+  //Serial.println(); 
+  //Serial.println(desejado);
+
+  //char InputZ[1][InputNodes] = {leitura1,leitura2};
+  char InputZ[1][InputNodes] = {1,1};
+  //InputZ[0,1] = (byte)1;
+  
+  for( p = 0 ; p < 1 ; p++ ) { 
+    //Serial.println(); 
+    //Serial.println();
+    
+    Serial.print (" Entrada ");
+    for( i = 0 ; i < InputNodes ; i++ ) {
+      Serial.print (InputZ[p][i], DEC);
+      Serial.print (" ");
+    }
+    Serial.print ("  Desejado ");
+    for( i = 0 ; i < OutputNodes ; i++ ) {
+      Serial.print (Target[desejado][i], DEC);
+      Serial.print (" ");
+    }
+/******************************************************************
+* Compute hidden layer activations
+******************************************************************/
+
+    for( i = 0 ; i < HiddenNodes ; i++ ) {    
+      Accum = HiddenWeights[InputNodes][i] ;
+      for( j = 0 ; j < InputNodes ; j++ ) {
+        Accum += InputZ[p][j] * HiddenWeights[j][i] ;
+      }
+      Hidden[i] = 1.0/(1.0 + exp(-Accum)) ;
+    }
+
+/******************************************************************
+* Compute output layer activations and calculate errors
+******************************************************************/
+
+    for( i = 0 ; i < OutputNodes ; i++ ) {    
+      Accum = OutputWeights[HiddenNodes][i] ;
+      for( j = 0 ; j < HiddenNodes ; j++ ) {
+        Accum += Hidden[j] * OutputWeights[j][i] ;
+      }
+      Output[i] = 1.0/(1.0 + exp(-Accum)) ; 
+    }
+    Serial.print ("  Saida ");
+    for( i = 0 ; i < OutputNodes ; i++ ) {
+
+      bool acende = 0;
+      if(Output[i] >0.5) acende = 1; else acende = 0;
+      //Serial.print (Output[i], 5);
+
+      if(i == 0){
+        //digitalWrite(LED1,acende);
+        Serial.print("LED1 = ");
+      } else if(i == 1){
+        //digitalWrite(LED2,acende);
+        Serial.print(" ** LED2 = ");
+      } else if(i == 2){
+        //digitalWrite(LED3,acende);
+        Serial.print(" ** LED3 = ");
+      } else if(i == 3){
+        //digitalWrite(LED4,acende);
+        Serial.print(" ** LED4 = ");
+      }
+      
+      Serial.print (Output[i],0);
+      Serial.print(" ");
+    }
+    Serial.println();
+    delay(1000);
+  }
+}
+
 
 void toTerminal()
 {

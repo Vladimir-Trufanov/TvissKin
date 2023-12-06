@@ -18,17 +18,15 @@ Extensions=*.*
 [Project tree]
 TvissKin
 	+TvissKin
-		+IIfirst
-			+ArduinoANN
+		-ArduinoANNtve
+		-IIfirst
+			-ArduinoANN
 				IIfirst\ArduinoANN\ArduinoANN.ino
-			+arduinoann-master
-				+arduinoann
-					IIfirst\arduinoann-master\arduinoann\arduinoann.ino
-				-duelo_arduino_esp8266_esp32
-					IIfirst\arduinoann-master\duelo_arduino_esp8266_esp32\duelo_arduino_esp8266_esp32.ino
-				-redes_neurais_V3_offline
-					IIfirst\arduinoann-master\redes_neurais_V3_offline\redes_neurais_V3_offline.ino
-				IIfirst\arduinoann-master\README.md
+			-ArduinoANNtve
+				-ArduinoANNtve
+					IIfirst\ArduinoANNtve\ArduinoANNtve\ArduinoANNtve.ino
+			-redes_neurais_V3_offline
+				IIfirst\redes_neurais_V3_offline\redes_neurais_V3_offline.ino
 			-TinyML-HelloWorld-ArduinoUno-master
 				-SineExample
 					IIfirst\TinyML-HelloWorld-ArduinoUno-master\SineExample\model.cpp
@@ -39,21 +37,48 @@ TvissKin
 				IIfirst\TinyML-HelloWorld-ArduinoUno-master\pic.jpg
 				IIfirst\TinyML-HelloWorld-ArduinoUno-master\README.md
 				IIfirst\TinyML-HelloWorld-ArduinoUno-master\train_hello_world_model.ipynb
+			-v1.0
+				-ArduinoANN
+					IIfirst\v1.0\ArduinoANN\ArduinoANN.ino
+			-v2.0
+				-ArduinoANN2
+					IIfirst\v2.0\ArduinoANN2\ArduinoANN2.ino
 			IIfirst\IIfirst.md
 			IIfirst\IIfirst.md.backup
 			IIfirst\neuron.jpg
+			IIfirst\sigmovidnaya-funkciya.jpg
+			IIfirst\tablica-istinnosti-dlya-xor.jpg
+			IIfirst\tablica-istinnosti-segmentov-cifrovogo-displeya.jpg
 			IIfirst\trehslojnaya-nejronnaya-set.jpg
 		-IIgestures
 		-IIhandwriting
 		-IIvoice
+		-Morse
+			Morse\Morse.cpp
+			Morse\Morse.h
+			Morse\Morse.ino
+		+sketch_dec06a
+			sketch_dec06a\dotimi.cpp
+			sketch_dec06a\sketch_dec06a.ino
+		-TCppPrown
+		-TCppTools
 		LICENSE
 		README.md
 		README.md.backup
+		TvissKin.ppr
 [Open project files]
 0=IIfirst\ArduinoANN\ArduinoANN.ino
+1=sketch_dec06a\sketch_dec06a.ino
+2=sketch_dec06a\dotimi.cpp
 [Selected Project Files]
 Main=
-Selected=IIfirst\ArduinoANN\ArduinoANN.ino
+Selected=sketch_dec06a\sketch_dec06a.ino
 [IIfirst\ArduinoANN\ArduinoANN.ino]
-TopLine=277
-Caret=2,112
+TopLine=1
+Caret=18,20
+[sketch_dec06a\sketch_dec06a.ino]
+TopLine=1
+Caret=68,22
+[sketch_dec06a\dotimi.cpp]
+TopLine=1
+Caret=1,3
