@@ -19,6 +19,8 @@ Extensions=*.*
 TvissKin
 	+TvissKin
 		-ArduinoANNtve
+			ArduinoANNtve\ArduinoANNtve.cpp
+			ArduinoANNtve\ArduinoANNtve.h
 		-IIfirst
 			-ArduinoANN
 				IIfirst\ArduinoANN\ArduinoANN.ino
@@ -57,9 +59,18 @@ TvissKin
 			Morse\Morse.cpp
 			Morse\Morse.h
 			Morse\Morse.ino
-		+sketch_dec06a
-			sketch_dec06a\dotimi.cpp
+		+RedesNeurais
+			RedesNeurais\ArduinoANNtve.cpp
+			RedesNeurais\ArduinoANNtve.h
+			RedesNeurais\RedesNeurais.ino
+		-sketch_dec06a
 			sketch_dec06a\sketch_dec06a.ino
+		-sketch_dec07a
+			sketch_dec07a\sketch_dec07a.ino
+		-sketch_dec07v2
+			sketch_dec07v2\Morse.cpp
+			sketch_dec07v2\Morse.h
+			sketch_dec07v2\sketch_dec07v2.ino
 		-TCppPrown
 		-TCppTools
 		LICENSE
@@ -67,18 +78,18 @@ TvissKin
 		README.md.backup
 		TvissKin.ppr
 [Open project files]
-0=IIfirst\ArduinoANN\ArduinoANN.ino
-1=sketch_dec06a\sketch_dec06a.ino
-2=sketch_dec06a\dotimi.cpp
+0=RedesNeurais\RedesNeurais.ino
+1=RedesNeurais\ArduinoANNtve.h
+2=RedesNeurais\ArduinoANNtve.cpp
 [Selected Project Files]
 Main=
-Selected=sketch_dec06a\sketch_dec06a.ino
-[IIfirst\ArduinoANN\ArduinoANN.ino]
-TopLine=1
-Caret=18,20
-[sketch_dec06a\sketch_dec06a.ino]
-TopLine=1
-Caret=68,22
-[sketch_dec06a\dotimi.cpp]
-TopLine=1
-Caret=1,3
+Selected=RedesNeurais\RedesNeurais.ino
+[RedesNeurais\RedesNeurais.ino]
+TopLine=165
+Caret=22,205
+[RedesNeurais\ArduinoANNtve.h]
+TopLine=41
+Caret=13,29
+[RedesNeurais\ArduinoANNtve.cpp]
+TopLine=87
+Caret=1,284

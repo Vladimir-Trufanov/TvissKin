@@ -1,26 +1,31 @@
-#include "dotimi.cpp"
-// У доти
-
 int pin = 13;
 int n = 0;
-int mode = OUTPUT;
 
 void setup()
 {
   Serial.begin(9600);
-  pinMode(pin, mode);
+  pinMode(pin, OUTPUT);
 }
 
 void loop()
 {
-  n++;
-  doti(pin); doti(pin); doti(pin);
+  dot(); dot(); dot();
   dash(); dash(); dash();
-  doti(pin); doti(pin); doti(pin);
+  dot(); dot(); dot();
+
+  n++;
   Serial.print (n);
   Serial.print (": ");
-  Serial.println ("У doti dot dot - dash dash dash - dot dot doti Й");
+  Serial.println ("SOS по Морзе: dot dot dot - dash dash dash - dot dot dot");
   delay(3000);
+}
+
+void dot()
+{
+  digitalWrite(pin, HIGH);
+  delay(250);
+  digitalWrite(pin, LOW);
+  delay(250);
 }
 
 void dash()
