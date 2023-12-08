@@ -1,32 +1,19 @@
 /*
-  ArduinoANNtve.h - Библиотека для мигания азбуки Морзе.
-  Created by David A. Mellis, November 2, 2007.
-  Released into the public domain.
+  ArduinoANNtve.h - Библиотека для --------- мигания азбуки Морзе.
+  ---Created by David A. Mellis, November 2, 2007.
+  --Released into the public domain.
 */
 #ifndef ArduinoANNtve_h
 #define ArduinoANNtve_h
 
 #include "Arduino.h"
 
-/*
-class Morse
-{
-  public:
-    Morse(int pin);
-    void begin();
-    void dot();
-    void dash();
-  private:
-    int _pin;
-};
-*/
-
 class ArduinoANN
 {
   public:
   
   ArduinoANN();
-  void train();
+  void Train();
 
   static const int PatternCount=4;         // Количество шаблонов - количество обучающих элементов или строк в таблице истинности. 
   static const int InputNodes=2;            // Входные узлы - количество входных нейронов. 

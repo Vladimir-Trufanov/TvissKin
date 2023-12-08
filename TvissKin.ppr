@@ -17,10 +17,14 @@ HTServer=localhost
 Extensions=*.*
 [Project tree]
 TvissKin
-	+TvissKin
+	-TvissKin
 		-ArduinoANNtve
-			ArduinoANNtve\ArduinoANNtve.cpp
-			ArduinoANNtve\ArduinoANNtve.h
+			-examples
+			-src
+				ArduinoANNtve\src\ArduinoANNtve.cpp
+				ArduinoANNtve\src\ArduinoANNtve.h
+			ArduinoANNtve\keywords.txt
+			ArduinoANNtve\library.properties
 		-IIfirst
 			-ArduinoANN
 				IIfirst\ArduinoANN\ArduinoANN.ino
@@ -55,22 +59,8 @@ TvissKin
 		-IIgestures
 		-IIhandwriting
 		-IIvoice
-		-Morse
-			Morse\Morse.cpp
-			Morse\Morse.h
-			Morse\Morse.ino
-		+RedesNeurais
-			RedesNeurais\ArduinoANNtve.cpp
-			RedesNeurais\ArduinoANNtve.h
+		-RedesNeurais
 			RedesNeurais\RedesNeurais.ino
-		-sketch_dec06a
-			sketch_dec06a\sketch_dec06a.ino
-		-sketch_dec07a
-			sketch_dec07a\sketch_dec07a.ino
-		-sketch_dec07v2
-			sketch_dec07v2\Morse.cpp
-			sketch_dec07v2\Morse.h
-			sketch_dec07v2\sketch_dec07v2.ino
 		-TCppPrown
 		-TCppTools
 		LICENSE
@@ -79,17 +69,17 @@ TvissKin
 		TvissKin.ppr
 [Open project files]
 0=RedesNeurais\RedesNeurais.ino
-1=RedesNeurais\ArduinoANNtve.h
-2=RedesNeurais\ArduinoANNtve.cpp
+1=..\Program Files (x86)\Arduino\libraries\Mouse\src\Mouse.cpp
+2=..\Program Files (x86)\Arduino\libraries\Mouse\src\Mouse.h
 [Selected Project Files]
 Main=
 Selected=RedesNeurais\RedesNeurais.ino
 [RedesNeurais\RedesNeurais.ino]
-TopLine=165
-Caret=22,205
-[RedesNeurais\ArduinoANNtve.h]
-TopLine=41
-Caret=13,29
-[RedesNeurais\ArduinoANNtve.cpp]
-TopLine=87
-Caret=1,284
+TopLine=1
+Caret=78,6
+[..\Program Files (x86)\Arduino\libraries\Mouse\src\Mouse.cpp]
+TopLine=47
+Caret=1,1
+[..\Program Files (x86)\Arduino\libraries\Mouse\src\Mouse.h]
+TopLine=1
+Caret=1,32

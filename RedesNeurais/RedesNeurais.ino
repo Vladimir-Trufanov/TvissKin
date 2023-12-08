@@ -48,40 +48,33 @@ const byte Target[PatternCount][OutputNodes] =
 */
 
 
-// Использование библиотеки для мигания азбуки Морзе
-
-#include "ArduinoANNtve.h"
-
-int n = 0;
+// Переключаемся при отладке на библиотечные файлы в каталоге
+#define isArduinoANNtve_lib
+#if !defined(isArduinoANNtve_lib)
+   #include "ArduinoANNtve.h"
+#else
+   #include <ArduinoANNtve.h>
+#endif
+// Инициируем счетчик проведенных тренировочных циклов (эпох)
+int nEpoch = 0;
+// Инициируемнейронную сеть
 ArduinoANN myANN; 
-//Morse morse(13);
 
 void setup()
 {
   Serial.begin(9600);
-  //morse.begin();
+  Serial.begin(9600);
+  Serial.begin(9600);
 }
 
 void loop()
 {
-  n++;
-  Serial.print (n);
+  nEpoch++;
+  Serial.print (nEpoch);
   Serial.print (": ");
   Serial.println ("ArduinoANNtve");
-  myANN.train();
+  myANN.Train();
   delay(2000);
-
-  /*
-  morse.dot(); morse.dot(); morse.dot();
-  morse.dash(); morse.dash(); morse.dash();
-  morse.dot(); morse.dot(); morse.dot();
-
-  n++;
-  Serial.print (n);
-  Serial.print (": ");
-  Serial.println ("SOS по Морзе (по установленной библиотеке): dot dot dot - dash dash dash - dot dot dot");
-  delay(3000);
-  */
 }
 
 /*
