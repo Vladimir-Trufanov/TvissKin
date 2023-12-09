@@ -17,7 +17,7 @@ HTServer=localhost
 Extensions=*.*
 [Project tree]
 TvissKin
-	-TvissKin
+	+TvissKin
 		-ArduinoANNtve
 			-examples
 			-src
@@ -25,8 +25,8 @@ TvissKin
 				ArduinoANNtve\src\ArduinoANNtve.h
 			ArduinoANNtve\keywords.txt
 			ArduinoANNtve\library.properties
-		-IIfirst
-			-ArduinoANN
+		+IIfirst
+			+ArduinoANN
 				IIfirst\ArduinoANN\ArduinoANN.ino
 			-ArduinoANNtve
 				-ArduinoANNtve
@@ -59,7 +59,9 @@ TvissKin
 		-IIgestures
 		-IIhandwriting
 		-IIvoice
-		-RedesNeurais
+		+RedesNeurais
+			RedesNeurais\ArduinoANNtve.cpp
+			RedesNeurais\ArduinoANNtve.h
 			RedesNeurais\RedesNeurais.ino
 		-TCppPrown
 		-TCppTools
@@ -69,17 +71,25 @@ TvissKin
 		TvissKin.ppr
 [Open project files]
 0=RedesNeurais\RedesNeurais.ino
-1=..\Program Files (x86)\Arduino\libraries\Mouse\src\Mouse.cpp
-2=..\Program Files (x86)\Arduino\libraries\Mouse\src\Mouse.h
+1=RedesNeurais\ArduinoANNtve.h
+2=RedesNeurais\ArduinoANNtve.cpp
+3=RedesNeurais\simplelib.h
+4=RedesNeurais\simplelib.cpp
 [Selected Project Files]
 Main=
 Selected=RedesNeurais\RedesNeurais.ino
 [RedesNeurais\RedesNeurais.ino]
+TopLine=112
+Caret=1,140
+[RedesNeurais\ArduinoANNtve.h]
+TopLine=30
+Caret=5,30
+[RedesNeurais\ArduinoANNtve.cpp]
+TopLine=53
+Caret=1,88
+[RedesNeurais\simplelib.h]
 TopLine=1
-Caret=78,6
-[..\Program Files (x86)\Arduino\libraries\Mouse\src\Mouse.cpp]
-TopLine=47
-Caret=1,1
-[..\Program Files (x86)\Arduino\libraries\Mouse\src\Mouse.h]
+Caret=16,16
+[RedesNeurais\simplelib.cpp]
 TopLine=1
-Caret=1,32
+Caret=6,8
