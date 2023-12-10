@@ -25,8 +25,8 @@ TvissKin
 				ArduinoANNtve\src\ArduinoANNtve.h
 			ArduinoANNtve\keywords.txt
 			ArduinoANNtve\library.properties
-		+IIfirst
-			+ArduinoANN
+		-IIfirst
+			-ArduinoANN
 				IIfirst\ArduinoANN\ArduinoANN.ino
 			-ArduinoANNtve
 				-ArduinoANNtve
@@ -59,10 +59,12 @@ TvissKin
 		-IIgestures
 		-IIhandwriting
 		-IIvoice
-		+RedesNeurais
+		-RedesNeurais
 			RedesNeurais\ArduinoANNtve.cpp
 			RedesNeurais\ArduinoANNtve.h
 			RedesNeurais\RedesNeurais.ino
+			RedesNeurais\simplelib.cpp
+			RedesNeurais\simplelib.h
 		-TCppPrown
 		-TCppTools
 		LICENSE
@@ -71,25 +73,9 @@ TvissKin
 		TvissKin.ppr
 [Open project files]
 0=RedesNeurais\RedesNeurais.ino
-1=RedesNeurais\ArduinoANNtve.h
-2=RedesNeurais\ArduinoANNtve.cpp
-3=RedesNeurais\simplelib.h
-4=RedesNeurais\simplelib.cpp
 [Selected Project Files]
 Main=
-Selected=RedesNeurais\ArduinoANNtve.cpp
+Selected=RedesNeurais\RedesNeurais.ino
 [RedesNeurais\RedesNeurais.ino]
-TopLine=100
+TopLine=52
 Caret=1,140
-[RedesNeurais\ArduinoANNtve.h]
-TopLine=16
-Caret=1,30
-[RedesNeurais\ArduinoANNtve.cpp]
-TopLine=73
-Caret=1,88
-[RedesNeurais\simplelib.h]
-TopLine=1
-Caret=16,16
-[RedesNeurais\simplelib.cpp]
-TopLine=1
-Caret=6,8

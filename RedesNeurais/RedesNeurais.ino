@@ -55,179 +55,26 @@ const byte Target[PatternCount][OutputNodes] =
 #else
    #include <ArduinoANNtve.h>
 #endif
-
-#include "simplelib.h";
-testClass tObj;
-  
-const int PatternCount=4;            // Количество шаблонов - количество обучающих элементов или строк в таблице истинности. 
-const int InputNodes=2;              // Входные узлы - количество входных нейронов. 
-const int OutputNodes = 4;           // Выходные узлы - количество выходных нейронов.
-   
-byte Input[]={
-   0, 0,
-   0, 1,
-   1, 0,
-   1, 1
-};
-
-byte Target[]={
-   0, 0, 0, 1,  
-   0, 0, 1, 0, 
-   0, 1, 0, 0, 
-   1, 0, 0, 0
-};
-
-
-  byte myArray[] = {2, 4, 8,};
-
-
-
-
-const int RowNol=4;       
-const int ColNol=3;           
-
-byte Nol[RowNol][ColNol] = 
-{
-  { 1, 1, 1 },  
-  { 1, 0, 1 }, 
-  { 1, 0, 1 }, 
-  { 1, 1, 1 }
-};
-
-
-
 // Инициируем счетчик проведенных тренировочных циклов (эпох)
 int nEpoch = 0;
-// Инициируем нейронную сеть
-ArduinoANN myANN;
+// Инициируемнейронную сеть
+ArduinoANN myANN; 
 
 void setup()
 {
-   Serial.begin(9600);
-  
-   // делаем массив
-   byte myArray[] = {5, 33, 58, 251, 91};
-
-   Serial.println("myArray ");  
-   Serial.print("myArray ");  
-   for (int i = 0; i < 5; i++) 
-   {
-      Serial.print(myArray[i]);  Serial.print(' ');
-   }
-   Serial.println(' ');
-
-   
-   // передаём массив и его размер (в байтах)
-   long arraySum = tObj.getSum((byte*)myArray, sizeof(myArray));
-   // arraySum == 438
-   Serial.println(" "); 
-   Serial.print("setup:arraySum=");  Serial.println(arraySum);
-}
-
-// ---
-
-//void tress(byte *arrayPtr, int nRow, int nCol) 
-void tress(byte arrayPtr[], int nRow, int nCol) 
-{  
-   Serial.print("nRow = "); Serial.println(nRow);
-   Serial.print("nCol = "); Serial.println(nCol);
-
-   int RowNol=nRow;
-   int ColNol=nCol;
-   byte myArray[RowNol][ColNol];
-
-
-   int k; int l;
-   for (int i=0; i<nRow; i++)
-   {
-      k=nCol * i;
-      for (int j=0; j<nCol; j++)
-      {
-         l=k + j;
-         Serial.print(arrayPtr[l]); Serial.print(" ");
-         myArray[i][j]=arrayPtr[l];
-      }
-       Serial.println(" ");
-   }
-
-   Serial.println("myArray: "); 
-   for (int i=0; i<nRow; i++)
-   {
-      for (int j=0; j<nCol; j++)
-      {
-         Serial.print(myArray[i][j]); Serial.print(" ");
-      }
-      Serial.println(" ");
-   }
-
-}
-
-
-
-long sumArray(byte *arrayPtr, int arrSize) 
-{  
-
-   Serial.print("arrSize="); Serial.println(arrSize);
-
-   byte arrayPtrO[arrSize];
-   
-   long sum = 0;
-   for (int i = 0; i < arrSize; i++)
-   {
-      sum += arrayPtr[i];
-      arrayPtrO[i] = arrayPtr[i];
-      Serial.print(arrayPtr[i]); Serial.print("  ");
-   }
-   Serial.println(" ");
-
-   long sum2 = 0;
-   for (int i = 0; i < arrSize; i++)
-   {
-      sum2 += arrayPtrO[i];
-      Serial.print(arrayPtrO[i]); Serial.print("  ");
-   }
-   Serial.println(" ");
-
-   
-   
-   return sum; // возвращаем
+  Serial.begin(9600);
+  Serial.begin(9600);
+  Serial.begin(9600);
 }
 
 void loop()
 {
-   int x = 10; 
-   int *p;
-   p = &x; //p теперь содержит адрес x 
-   Serial.print("Значение, сохраненное в адресе, указанном p, равно: "); Serial.println(*p);
-   
-   byte myArray[] = 
-   {
-     1, 2, 3, 4, 
-     5, 6, 7, 8
-   };
-   Serial.println("36:");
-   Serial.println("summa = "); Serial.println(sumArray(myArray, sizeof(myArray)/sizeof(byte)));
-
-   tress(myArray,2,4); 
-
-   /*
-   Serial.println("myArray ");  
-   Serial.print("myArray ");  
-   for (int i = 0; i < 5; i++) 
-   {
-      Serial.print(myArray[i]);  Serial.print(' ');
-   }
-   Serial.println(' ');
-   */
-
-   //Serial.print("loop:arraySum=");  Serial.println(arraySum);
-   tObj.SumTrain();
-   nEpoch++;
-   Serial.print (nEpoch);
-   Serial.print (": ");
-   Serial.println ("ArduinoANNtve");
-   myANN.Train(Input, Target, PatternCount, InputNodes, OutputNodes);
-   delay(2000);
+  nEpoch++;
+  Serial.print (nEpoch);
+  Serial.print (": ");
+  Serial.println ("ArduinoANNtve");
+  myANN.Train();
+  delay(2000);
 }
 
 /*

@@ -9,21 +9,21 @@
 #include "math.h"
 
 #include "ArduinoANNtve.h"
+
+
 ArduinoANN::ArduinoANN()
 {
-   //PatternCount=_PatternCount;          // Количество шаблонов - количество обучающих элементов или строк в таблице истинности 
-   //InputNodes=_InputNodes;              // Входные узлы - количество входных нейронов 
-   //OutputNodes=_OutputNodes;            // Выходные узлы - количество выходных нейронов
-
    randomSeed(analogRead(3));
    ReportEvery1000 = 1;
+   for(p=0; p<PatternCount; p++) 
+   {    
+      RandomizedIndex[p] = p ;
+   }
 }
 
 
 void ArduinoANN::toTerminal()
 {
-  
-   /*
    for(p = 0 ; p < PatternCount ; p++) 
    { 
       Serial.println(); 
@@ -68,128 +68,13 @@ void ArduinoANN::toTerminal()
          Serial.print (" ");
       }
    }
-   */
 }
 
-void proba(int PatternCount, int InputNodes)
+
+
+void ArduinoANN::Train()
 {
-   Serial.print("proba PatternCount = "); Serial.println(PatternCount);
-   Serial.print("proba InputNodes   = "); Serial.println(InputNodes);
-}
-
-void ArduinoANN::Train(byte _Input[], byte _Target[], int _PatternCount, int _InputNodes, int _OutputNodes)
-{
-   Serial.println ("Train");
-
-   PatternCount=_PatternCount;
-   InputNodes=_InputNodes;
-   OutputNodes=_OutputNodes;
-
-   byte Input[PatternCount][InputNodes];
-   byte Target[PatternCount][OutputNodes]; 
-
-  /*   
-  byte Input[PatternCount][InputNodes]= 
-  {
-    {0,0},
-    {0,1},
-    {1,0},
-    {1,1}
-  }; 
-  */
-
-  /*
-  byte Target[PatternCount][OutputNodes] = 
-  {
-    { 0, 0, 0, 1 },  
-    { 0, 0, 1, 0 }, 
-    { 0, 1, 0, 0 }, 
-    { 1, 0, 0, 0 }
-  };
-  */
-
-   
-
-   Serial.print("*** PatternCount = "); Serial.println(PatternCount);
-   Serial.print("*** InputNodes   = "); Serial.println(InputNodes);
-   Serial.print("*** OutputNodes  = "); Serial.println(OutputNodes);
-
-   Serial.println("*** Input: "); 
-   for (i=0; i<PatternCount; i++)
-   {
-      p=InputNodes * i;
-      for (j=0; j<InputNodes; j++)
-      {
-         q=p + j;
-         Serial.print(_Input[q]); Serial.print(" ");
-         Input[i][j]=_Input[q];
-      }
-       Serial.println(" ");
-   }
-
-   proba(PatternCount,InputNodes);
-   for (i=0; i<PatternCount; i++)
-   {
-      for (j=0; j<InputNodes; j++)
-      {
-         Serial.print(Input[i][j]); Serial.print(" ");
-      }
-      Serial.println(" ");
-   }
-
-   Serial.println("*** Target: "); 
-   for (i=0; i<PatternCount; i++)
-   {
-      p=OutputNodes * i;
-      for (j=0; j<OutputNodes; j++)
-      {
-         q=p + j;
-         Serial.print(_Target[q]); Serial.print(" ");
-         Target[i][j]=_Target[q];
-      }
-       Serial.println(" ");
-   }
-
-   for (i=0; i<PatternCount; i++)
-   {
-      for (j=0; j<OutputNodes; j++)
-      {
-         Serial.print(Target[i][j]); Serial.print(" ");
-      }
-      Serial.println(" ");
-   }
-
-
-
-
-
-
-
-
-//----
-   
-   int RandomizedIndex[PatternCount];
-   for(p=0; p<PatternCount; p++) 
-   {    
-      RandomizedIndex[p] = p ;
-   }
-
-
-
-   float Hidden[HiddenNodes];
-   float Output[OutputNodes];
-   float HiddenWeights[InputNodes+1][HiddenNodes];         // Веса, поступающие в промежуточный слой  
-   float OutputWeights[HiddenNodes+1][OutputNodes];        // Веса, поступающие на выход
-   float HiddenDelta[HiddenNodes];
-   float OutputDelta[OutputNodes];
-   float ChangeHiddenWeights[InputNodes+1][HiddenNodes];   // Изменения обратного распространения из скрытого слоя
-   float ChangeOutputWeights[HiddenNodes+1][OutputNodes];  // Изменения обратного распространения с выходов в скрытый слой
-
-
-
-
-   
-
+  Serial.println ("Train");
    // Инициализируем и изменяем скрытые веса 
    // (веса распространения входов в скрытый слой)
    for( i = 0 ; i < HiddenNodes ; i++ ) 
