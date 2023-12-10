@@ -25,6 +25,8 @@ class ArduinoANN
    int InputNodes;                // Входные узлы - количество входных нейронов. 
    int OutputNodes;               // Выходные узлы - количество выходных нейронов.
 
+   //byte *Input;
+   //byte Target[PatternCount][OutputNodes]; 
 
 
 

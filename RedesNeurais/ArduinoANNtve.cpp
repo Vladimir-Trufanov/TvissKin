@@ -22,6 +22,7 @@ ArduinoANN::ArduinoANN()
 
 void ArduinoANN::toTerminal()
 {
+  
    /*
    for(p = 0 ; p < PatternCount ; p++) 
    { 
@@ -68,6 +69,12 @@ void ArduinoANN::toTerminal()
       }
    }
    */
+}
+
+void proba(int PatternCount, int InputNodes)
+{
+   Serial.print("proba PatternCount = "); Serial.println(PatternCount);
+   Serial.print("proba InputNodes   = "); Serial.println(InputNodes);
 }
 
 void ArduinoANN::Train(byte _Input[], byte _Target[], int _PatternCount, int _InputNodes, int _OutputNodes)
@@ -120,6 +127,7 @@ void ArduinoANN::Train(byte _Input[], byte _Target[], int _PatternCount, int _In
        Serial.println(" ");
    }
 
+   proba(PatternCount,InputNodes);
    for (i=0; i<PatternCount; i++)
    {
       for (j=0; j<InputNodes; j++)
