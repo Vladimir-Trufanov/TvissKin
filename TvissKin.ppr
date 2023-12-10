@@ -77,15 +77,15 @@ TvissKin
 4=RedesNeurais\simplelib.cpp
 [Selected Project Files]
 Main=
-Selected=RedesNeurais\RedesNeurais.ino
+Selected=RedesNeurais\ArduinoANNtve.cpp
 [RedesNeurais\RedesNeurais.ino]
-TopLine=112
+TopLine=100
 Caret=1,140
 [RedesNeurais\ArduinoANNtve.h]
-TopLine=30
-Caret=5,30
+TopLine=16
+Caret=1,30
 [RedesNeurais\ArduinoANNtve.cpp]
-TopLine=53
+TopLine=73
 Caret=1,88
 [RedesNeurais\simplelib.h]
 TopLine=1

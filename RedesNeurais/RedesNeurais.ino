@@ -48,36 +48,34 @@ const byte Target[PatternCount][OutputNodes] =
 */
 
 
-   // Переключаемся при отладке на библиотечные файлы в каталоге
-   // #define isArduinoANNtve_lib
-   #if !defined(isArduinoANNtve_lib)
-      #include "ArduinoANNtve.h"
-   #else
-      #include <ArduinoANNtve.h>
-   #endif
+// Переключаемся при отладке на библиотечные файлы в каталоге
+// #define isArduinoANNtve_lib
+#if !defined(isArduinoANNtve_lib)
+   #include "ArduinoANNtve.h"
+#else
+   #include <ArduinoANNtve.h>
+#endif
 
-   #include "simplelib.h";
-   testClass tObj;
+#include "simplelib.h";
+testClass tObj;
   
-  const int PatternCount=4;            // Количество шаблонов - количество обучающих элементов или строк в таблице истинности. 
-  const int InputNodes=2;              // Входные узлы - количество входных нейронов. 
-  const int OutputNodes = 4;           // Выходные узлы - количество выходных нейронов.
-  
-  byte Input[PatternCount][InputNodes]= 
-  {
-    {0,0},
-    {0,1},
-    {1,0},
-    {1,1}
-  }; 
+const int PatternCount=4;            // Количество шаблонов - количество обучающих элементов или строк в таблице истинности. 
+const int InputNodes=2;              // Входные узлы - количество входных нейронов. 
+const int OutputNodes = 4;           // Выходные узлы - количество выходных нейронов.
+   
+byte Input[]={
+   0, 0,
+   0, 1,
+   1, 0,
+   1, 1
+};
 
-  byte Target[PatternCount][OutputNodes] = 
-  {
-    { 0, 0, 0, 1 },  
-    { 0, 0, 1, 0 }, 
-    { 0, 1, 0, 0 }, 
-    { 1, 0, 0, 0 }
-  };
+byte Target[]={
+   0, 0, 0, 1,  
+   0, 0, 1, 0, 
+   0, 1, 0, 0, 
+   1, 0, 0, 0
+};
 
 
   byte myArray[] = {2, 4, 8,};
@@ -101,13 +99,10 @@ byte Nol[RowNol][ColNol] =
 // Инициируем счетчик проведенных тренировочных циклов (эпох)
 int nEpoch = 0;
 // Инициируем нейронную сеть
-// ArduinoANN myANN; 
-ArduinoANN myANN(PatternCount, InputNodes, OutputNodes, RowNol, ColNol, *Nol);
+ArduinoANN myANN;
 
 void setup()
 {
-   Serial.begin(9600);
-   Serial.begin(9600);
    Serial.begin(9600);
   
    // делаем массив
@@ -231,7 +226,7 @@ void loop()
    Serial.print (nEpoch);
    Serial.print (": ");
    Serial.println ("ArduinoANNtve");
-   myANN.Train();
+   myANN.Train(Input, Target, PatternCount, InputNodes, OutputNodes);
    delay(2000);
 }
 
