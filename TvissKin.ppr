@@ -17,7 +17,7 @@ HTServer=localhost
 Extensions=*.*
 [Project tree]
 TvissKin
-	-TvissKin
+	+TvissKin
 		-ArduinoANNtve
 			-examples
 			-src
@@ -59,6 +59,14 @@ TvissKin
 		-IIgestures
 		-IIhandwriting
 		-IIvoice
+		+Kesha
+			Kesha\ArduinoANNtve.cpp
+			Kesha\ArduinoANNtve.h
+			Kesha\Kesha.ino
+			Kesha\opredelenie-chisla-sochetanij.jpg
+			Kesha\README.md
+			Kesha\README.md.backup
+			Kesha\WorkSet-Kesha.hh
 		-RedesNeurais
 			RedesNeurais\ArduinoANNtve.cpp
 			RedesNeurais\ArduinoANNtve.h
@@ -75,9 +83,21 @@ TvissKin
 		TvissKin.ppr
 [Open project files]
 0=RedesNeurais\RedesNeurais.ino
+1=Kesha\Kesha.ino
+2=Kesha\WorkSet-Kesha.hh
+3=Kesha\ArduinoANNtve.h
 [Selected Project Files]
 Main=
-Selected=RedesNeurais\RedesNeurais.ino
+Selected=Kesha\WorkSet-Kesha.hh
 [RedesNeurais\RedesNeurais.ino]
 TopLine=1
 Caret=65,16
+[Kesha\Kesha.ino]
+TopLine=1
+Caret=1,17
+[Kesha\WorkSet-Kesha.hh]
+TopLine=1
+Caret=23,47
+[Kesha\ArduinoANNtve.h]
+TopLine=44
+Caret=26,57

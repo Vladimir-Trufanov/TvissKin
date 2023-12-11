@@ -54,7 +54,7 @@ class ArduinoANN
   // Подключаем тренировочные матрицы и параметры   
   // #include "WorkSet-Ralph-Heymsfeld.hh"
   // Подключаем тренировочные матрицы и параметры   
-  #include "WorkSet-Mil-Grau.hh"
+  #include "WorkSet-Kesha.hh"
 
   private:
   

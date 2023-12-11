@@ -1,19 +1,53 @@
-// Arduino C/C++                                        *** ArduinoANNtve.h ***
+// Arduino C/C++                                              *** Kesha.ino ***
 
 // ****************************************************************************
-// * ArduinoANNtve                   Искусственная нейронная сеть для Arduino *
-// *                            http://robotics.hobbizine.com/arduinoann.html *
+// *            Мобильная игра по отгадыванию задуманной комбинации триггеров *
+// *  (фоторезисторов) на основе искусственного интеллекта вместе со внуками. *
 // *                                                                          *
-// *              Определения класса искусственной нейронной сети для Arduino *
+// * Как проходит игра (1 версия):                                            *
+// * играют двое, играют две игры на время. Вначале первый задумывает         *
+// * комбинацию триггеров и обучает ИИ, а второй отгадывает эту комбинацию.   *
+// * Во второй игре меняются местами - второй игрок задумывает комбинацию,    *
+// * первый отгадывает. Кто быстрее отгадал, тот и выиграл.                   *
 // *                                                                          *
-// * v2.0, 11.12.2023                  Авторы: Ralph Heymsfeld, Труфанов В.Е. *
-// * Copyright © 2022 tve              Дата создания:              23.03.2012 *
+// * v1.0, 04.12.2023                               Автор:      Труфанов В.Е. *
+// * Copyright © 2022 tve                           Дата создания: 23.03.2012 *
 // ****************************************************************************
+
+
+// Переключаемся при отладке на библиотечные файлы в каталоге
+// #define isArduinoANNtve_lib
+#if !defined(isArduinoANNtve_lib)
+   #include "ArduinoANNtve.h"
+#else
+   #include <ArduinoANNtve.h>
+#endif
+
+// Инициируем счетчик проведенных тренировочных циклов (эпох)
+int nEpoch = 0;
+// Инициируем нейронную сеть
+ArduinoANN myANN; 
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  nEpoch++;
+  Serial.print (nEpoch);
+  Serial.print (": ");
+  Serial.println ("Kesha");
+  myANN.Train();
+  delay(10000);
+}
 
 /*** 
  * Конфигурация сети настраивается для каждой сети и включает в себя два массива
  * данных - входной и целевой, которые вместе составляют таблицу истинности 
- * обучающего набора. 
+ * обучающего набора. Таблица истинности показывает правила преобразования 
+ * семи сегментов светодиодного цифрового дисплея (0-9) в двоичное число (0000 - 1001)
  * 
  * Cкорость обучения установлена на уровне 0.3 (желательно - порядка 0.01). 
  * Более низкое значение скорости обучения приводит к замедлению процесса обучения, 
@@ -39,45 +73,4 @@
  * на самом деле никогда не достигнет его.
 ***/
 
-#ifndef ArduinoANNtve_h
-#define ArduinoANNtve_h
-
-#include "Arduino.h"
-
-class ArduinoANN
-{
-  public:
-  
-  ArduinoANN();
-  void Train();
-
-  // Подключаем тренировочные матрицы и параметры   
-  // #include "WorkSet-Ralph-Heymsfeld.hh"
-  // Подключаем тренировочные матрицы и параметры   
-  #include "WorkSet-Mil-Grau.hh"
-
-  private:
-  
-  int i, j, p, q, r;
-  int ReportEvery1000;
-  int RandomizedIndex[PatternCount];
-  long  TrainingCycle;
-  float Rando;
-  float Error;
-  float Accum;
-
-  float Hidden[HiddenNodes];
-  float Output[OutputNodes];
-  float HiddenWeights[InputNodes+1][HiddenNodes];         // Веса, поступающие в промежуточный слой  
-  float OutputWeights[HiddenNodes+1][OutputNodes];        // Веса, поступающие на выход
-  float HiddenDelta[HiddenNodes];
-  float OutputDelta[OutputNodes];
-  float ChangeHiddenWeights[InputNodes+1][HiddenNodes];   // Изменения обратного распространения из скрытого слоя
-  float ChangeOutputWeights[HiddenNodes+1][OutputNodes];  // Изменения обратного распространения с выходов в скрытый слой
-
-  void toTerminal();
-};
-
-#endif
-
-// ******************************************************** ArduinoANNtve.h ***
+// ************************************************************** Kesha.ino ***
