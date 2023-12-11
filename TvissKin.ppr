@@ -17,7 +17,7 @@ HTServer=localhost
 Extensions=*.*
 [Project tree]
 TvissKin
-	+TvissKin
+	-TvissKin
 		-ArduinoANNtve
 			-examples
 			-src
@@ -65,6 +65,8 @@ TvissKin
 			RedesNeurais\RedesNeurais.ino
 			RedesNeurais\simplelib.cpp
 			RedesNeurais\simplelib.h
+			RedesNeurais\WorkSet-Mil-Grau.hh
+			RedesNeurais\WorkSet-Ralph-Heymsfeld.hh
 		-TCppPrown
 		-TCppTools
 		LICENSE
@@ -77,5 +79,5 @@ TvissKin
 Main=
 Selected=RedesNeurais\RedesNeurais.ino
 [RedesNeurais\RedesNeurais.ino]
-TopLine=52
-Caret=1,140
+TopLine=1
+Caret=65,16
