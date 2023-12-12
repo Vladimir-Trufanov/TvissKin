@@ -16,7 +16,7 @@
 
 
 // Переключаемся при отладке на библиотечные файлы в каталоге
-// #define isArduinoANNtve_lib
+#define isArduinoANNtve_lib
 #if !defined(isArduinoANNtve_lib)
    #include "ArduinoANNtve.h"
 #else

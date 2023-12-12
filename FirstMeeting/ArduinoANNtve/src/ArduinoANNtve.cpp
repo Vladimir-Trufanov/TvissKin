@@ -1,15 +1,18 @@
-/*
-  ArduinoANNtve.cpp - Библиотека для мигания азбуки Морзе.
-  Created by David A. Mellis, November 2, 2007.
-  Updated by Jason A. Cox, February 18, 2023.
-  Released into the public domain.
-*/
+// Arduino C/C++                                      *** ArduinoANNtve.cpp ***
+
+// ****************************************************************************
+// * ArduinoANNtve                   Искусственная нейронная сеть для Arduino *
+// *                            http://robotics.hobbizine.com/arduinoann.html *
+// *                                                                          *
+// *       Методы класса по изучению искусственной нейронной сети для Arduino *
+// *                                                                          *
+// * v2.0, 11.12.2023                  Авторы: Ralph Heymsfeld, Труфанов В.Е. *
+// * Copyright © 2022 tve              Дата создания:              23.03.2012 *
+// ****************************************************************************
 
 #include "Arduino.h"
 #include "math.h"
-
 #include "ArduinoANNtve.h"
-
 
 ArduinoANN::ArduinoANN()
 {
@@ -20,7 +23,6 @@ ArduinoANN::ArduinoANN()
       RandomizedIndex[p] = p ;
    }
 }
-
 
 void ArduinoANN::toTerminal()
 {
@@ -69,8 +71,6 @@ void ArduinoANN::toTerminal()
       }
    }
 }
-
-
 
 void ArduinoANN::Train()
 {
@@ -286,35 +286,6 @@ void ArduinoANN::Train()
    Serial.println ();
    Serial.println ();  
    ReportEvery1000 = 1;
-
-}
-// --------------------------------------
-
-/*
-Morse::Morse(int pin)
-{
-  _pin = pin;
 }
 
-void Morse::begin()
-{
-  pinMode(_pin, OUTPUT);
-}
-
-void Morse::dot()
-{
-  digitalWrite(_pin, HIGH);
-  delay(250);
-  digitalWrite(_pin, LOW);
-  delay(250);  
-}
-
-void Morse::dash()
-{
-  Serial.println("Dash");
-  digitalWrite(_pin, HIGH);
-  delay(1000);
-  digitalWrite(_pin, LOW);
-  delay(250);
-}
-*/
+// ****************************************************** ArduinoANNtve.cpp ***

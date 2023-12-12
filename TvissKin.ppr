@@ -17,64 +17,73 @@ HTServer=localhost
 Extensions=*.*
 [Project tree]
 TvissKin
-	+TvissKin
-		-ArduinoANNtve
-			-examples
-			-src
-				ArduinoANNtve\src\ArduinoANNtve.cpp
-				ArduinoANNtve\src\ArduinoANNtve.h
-			ArduinoANNtve\keywords.txt
-			ArduinoANNtve\library.properties
-		-IIfirst
-			-ArduinoANN
-				IIfirst\ArduinoANN\ArduinoANN.ino
+	-TvissKin
+		-fil
 			-ArduinoANNtve
 				-ArduinoANNtve
-					IIfirst\ArduinoANNtve\ArduinoANNtve\ArduinoANNtve.ino
+					fil\ArduinoANNtve\ArduinoANNtve\ArduinoANNtve.ino
+				-examples
+				-src
+					fil\ArduinoANNtve\src\ArduinoANNtve.cpp
+					fil\ArduinoANNtve\src\ArduinoANNtve.h
+				fil\ArduinoANNtve\keywords.txt
+				fil\ArduinoANNtve\library.properties
 			-redes_neurais_V3_offline
-				IIfirst\redes_neurais_V3_offline\redes_neurais_V3_offline.ino
+				fil\redes_neurais_V3_offline\redes_neurais_V3_offline.ino
 			-TinyML-HelloWorld-ArduinoUno-master
 				-SineExample
-					IIfirst\TinyML-HelloWorld-ArduinoUno-master\SineExample\model.cpp
-					IIfirst\TinyML-HelloWorld-ArduinoUno-master\SineExample\model.h
-					IIfirst\TinyML-HelloWorld-ArduinoUno-master\SineExample\model_data.cpp
-					IIfirst\TinyML-HelloWorld-ArduinoUno-master\SineExample\model_data.h
-					IIfirst\TinyML-HelloWorld-ArduinoUno-master\SineExample\SineExample.ino
-				IIfirst\TinyML-HelloWorld-ArduinoUno-master\pic.jpg
-				IIfirst\TinyML-HelloWorld-ArduinoUno-master\README.md
-				IIfirst\TinyML-HelloWorld-ArduinoUno-master\train_hello_world_model.ipynb
+					fil\TinyML-HelloWorld-ArduinoUno-master\SineExample\model.cpp
+					fil\TinyML-HelloWorld-ArduinoUno-master\SineExample\model.h
+					fil\TinyML-HelloWorld-ArduinoUno-master\SineExample\model_data.cpp
+					fil\TinyML-HelloWorld-ArduinoUno-master\SineExample\model_data.h
+					fil\TinyML-HelloWorld-ArduinoUno-master\SineExample\SineExample.ino
+				fil\TinyML-HelloWorld-ArduinoUno-master\pic.jpg
+				fil\TinyML-HelloWorld-ArduinoUno-master\README.md
+				fil\TinyML-HelloWorld-ArduinoUno-master\train_hello_world_model.ipynb
 			-v1.0
 				-ArduinoANN
-					IIfirst\v1.0\ArduinoANN\ArduinoANN.ino
+					fil\v1.0\ArduinoANN\ArduinoANN.ino
 			-v2.0
 				-ArduinoANN2
-					IIfirst\v2.0\ArduinoANN2\ArduinoANN2.ino
-			IIfirst\IIfirst.md
-			IIfirst\IIfirst.md.backup
-			IIfirst\neuron.jpg
-			IIfirst\sigmovidnaya-funkciya.jpg
-			IIfirst\tablica-istinnosti-dlya-xor.jpg
-			IIfirst\tablica-istinnosti-segmentov-cifrovogo-displeya.jpg
-			IIfirst\trehslojnaya-nejronnaya-set.jpg
+					fil\v2.0\ArduinoANN2\ArduinoANN2.ino
+			fil\ArduinoANNtve.cpp
+			fil\ArduinoANNtve.h
+			fil\IIfirst.md.backup
+		-FirstMeeting
+			-ArduinoANN
+				FirstMeeting\ArduinoANN\ArduinoANN.ino
+			-ArduinoANNtve
+				-examples
+				-src
+					FirstMeeting\ArduinoANNtve\src\ArduinoANNtve.cpp
+					FirstMeeting\ArduinoANNtve\src\ArduinoANNtve.h
+					FirstMeeting\ArduinoANNtve\src\WorkSet-Kesha.hh
+				FirstMeeting\ArduinoANNtve\keywords.txt
+				FirstMeeting\ArduinoANNtve\library.properties
+			-RedesNeurais
+				FirstMeeting\RedesNeurais\ArduinoANNtve.cpp
+				FirstMeeting\RedesNeurais\ArduinoANNtve.h
+				FirstMeeting\RedesNeurais\RedesNeurais.ino
+				FirstMeeting\RedesNeurais\simplelib.cpp
+				FirstMeeting\RedesNeurais\simplelib.h
+				FirstMeeting\RedesNeurais\WorkSet-Mil-Grau.hh
+				FirstMeeting\RedesNeurais\WorkSet-Ralph-Heymsfeld.hh
+			FirstMeeting\FirstMeeting.md
+			FirstMeeting\FirstMeeting.md.backup
+			FirstMeeting\neuron.jpg
+			FirstMeeting\sigmovidnaya-funkciya.jpg
+			FirstMeeting\tablica-istinnosti-dlya-xor.jpg
+			FirstMeeting\tablica-istinnosti-segmentov-cifrovogo-displeya.jpg
+			FirstMeeting\trehslojnaya-nejronnaya-set.jpg
 		-IIgestures
 		-IIhandwriting
 		-IIvoice
-		+Kesha
-			Kesha\ArduinoANNtve.cpp
-			Kesha\ArduinoANNtve.h
-			Kesha\Kesha.ino
+		-Kesha
+			-KeshaANN
+				Kesha\KeshaANN\KeshaANN.ino
+			Kesha\Kesha.md
+			Kesha\Kesha.md.backup
 			Kesha\opredelenie-chisla-sochetanij.jpg
-			Kesha\README.md
-			Kesha\README.md.backup
-			Kesha\WorkSet-Kesha.hh
-		-RedesNeurais
-			RedesNeurais\ArduinoANNtve.cpp
-			RedesNeurais\ArduinoANNtve.h
-			RedesNeurais\RedesNeurais.ino
-			RedesNeurais\simplelib.cpp
-			RedesNeurais\simplelib.h
-			RedesNeurais\WorkSet-Mil-Grau.hh
-			RedesNeurais\WorkSet-Ralph-Heymsfeld.hh
 		-TCppPrown
 		-TCppTools
 		LICENSE
@@ -82,22 +91,22 @@ TvissKin
 		README.md.backup
 		TvissKin.ppr
 [Open project files]
-0=RedesNeurais\RedesNeurais.ino
-1=Kesha\Kesha.ino
-2=Kesha\WorkSet-Kesha.hh
-3=Kesha\ArduinoANNtve.h
+0=FirstMeeting\RedesNeurais\ArduinoANNtve.h
+1=FirstMeeting\RedesNeurais\WorkSet-Ralph-Heymsfeld.hh
+2=FirstMeeting\RedesNeurais\RedesNeurais.ino
+3=FirstMeeting\RedesNeurais\WorkSet-Mil-Grau.hh
 [Selected Project Files]
 Main=
-Selected=Kesha\WorkSet-Kesha.hh
-[RedesNeurais\RedesNeurais.ino]
+Selected=FirstMeeting\RedesNeurais\WorkSet-Mil-Grau.hh
+[FirstMeeting\RedesNeurais\ArduinoANNtve.h]
+TopLine=33
+Caret=3,57
+[FirstMeeting\RedesNeurais\WorkSet-Ralph-Heymsfeld.hh]
+TopLine=207
+Caret=1,56
+[FirstMeeting\RedesNeurais\RedesNeurais.ino]
 TopLine=1
-Caret=65,16
-[Kesha\Kesha.ino]
+Caret=1,47
+[FirstMeeting\RedesNeurais\WorkSet-Mil-Grau.hh]
 TopLine=1
-Caret=1,17
-[Kesha\WorkSet-Kesha.hh]
-TopLine=1
-Caret=23,47
-[Kesha\ArduinoANNtve.h]
-TopLine=44
-Caret=26,57
+Caret=77,8
