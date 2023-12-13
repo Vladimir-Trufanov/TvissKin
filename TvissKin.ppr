@@ -17,38 +17,15 @@ HTServer=localhost
 Extensions=*.*
 [Project tree]
 TvissKin
-	-TvissKin
-		-fil
-			-ArduinoANNtve
-				-ArduinoANNtve
-					fil\ArduinoANNtve\ArduinoANNtve\ArduinoANNtve.ino
-				-examples
-				-src
-					fil\ArduinoANNtve\src\ArduinoANNtve.cpp
-					fil\ArduinoANNtve\src\ArduinoANNtve.h
-				fil\ArduinoANNtve\keywords.txt
-				fil\ArduinoANNtve\library.properties
-			-redes_neurais_V3_offline
-				fil\redes_neurais_V3_offline\redes_neurais_V3_offline.ino
-			-TinyML-HelloWorld-ArduinoUno-master
-				-SineExample
-					fil\TinyML-HelloWorld-ArduinoUno-master\SineExample\model.cpp
-					fil\TinyML-HelloWorld-ArduinoUno-master\SineExample\model.h
-					fil\TinyML-HelloWorld-ArduinoUno-master\SineExample\model_data.cpp
-					fil\TinyML-HelloWorld-ArduinoUno-master\SineExample\model_data.h
-					fil\TinyML-HelloWorld-ArduinoUno-master\SineExample\SineExample.ino
-				fil\TinyML-HelloWorld-ArduinoUno-master\pic.jpg
-				fil\TinyML-HelloWorld-ArduinoUno-master\README.md
-				fil\TinyML-HelloWorld-ArduinoUno-master\train_hello_world_model.ipynb
-			-v1.0
-				-ArduinoANN
-					fil\v1.0\ArduinoANN\ArduinoANN.ino
-			-v2.0
-				-ArduinoANN2
-					fil\v2.0\ArduinoANN2\ArduinoANN2.ino
-			fil\ArduinoANNtve.cpp
-			fil\ArduinoANNtve.h
-			fil\IIfirst.md.backup
+	+TvissKin
+		+ArduinoNano33BLESense
+			+ButtonLed
+				ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
+				ArduinoNano33BLESense\ButtonLed\konfiguraciya-soedinenij-dlya-proekta-knopki.jpg
+			ArduinoNano33BLESense\ArduinoNano33BLESense.md
+			ArduinoNano33BLESense\ArduinoNano33BLESense.md.backup
+			ArduinoNano33BLESense\raspinovka2.jpg
+			ArduinoNano33BLESense\raspinovka-platy-arduino-nano-33-ble-sense.jpg
 		-FirstMeeting
 			-ArduinoANN
 				FirstMeeting\ArduinoANN\ArduinoANN.ino
@@ -91,22 +68,10 @@ TvissKin
 		README.md.backup
 		TvissKin.ppr
 [Open project files]
-0=FirstMeeting\RedesNeurais\ArduinoANNtve.h
-1=FirstMeeting\RedesNeurais\WorkSet-Ralph-Heymsfeld.hh
-2=FirstMeeting\RedesNeurais\RedesNeurais.ino
-3=FirstMeeting\RedesNeurais\WorkSet-Mil-Grau.hh
+0=ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
 [Selected Project Files]
 Main=
-Selected=FirstMeeting\RedesNeurais\WorkSet-Mil-Grau.hh
-[FirstMeeting\RedesNeurais\ArduinoANNtve.h]
-TopLine=33
-Caret=3,57
-[FirstMeeting\RedesNeurais\WorkSet-Ralph-Heymsfeld.hh]
-TopLine=207
-Caret=1,56
-[FirstMeeting\RedesNeurais\RedesNeurais.ino]
-TopLine=1
-Caret=1,47
-[FirstMeeting\RedesNeurais\WorkSet-Mil-Grau.hh]
-TopLine=1
-Caret=77,8
+Selected=ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
+[ArduinoNano33BLESense\ButtonLed\ButtonLed.ino]
+TopLine=22
+Caret=48,17

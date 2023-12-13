@@ -52,9 +52,9 @@ class ArduinoANN
   void Train();
 
   // Подключаем тренировочные матрицы и параметры   
-  //#include "WorkSet-Ralph-Heymsfeld.hh"
+  #include "WorkSet-Ralph-Heymsfeld.hh"
   // Подключаем тренировочные матрицы и параметры   
-  #include "WorkSet-Mil-Grau.hh"
+  //#include "WorkSet-Mil-Grau.hh"
 
   private:
   
