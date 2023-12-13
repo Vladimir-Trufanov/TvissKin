@@ -19,9 +19,11 @@ Extensions=*.*
 TvissKin
 	+TvissKin
 		+ArduinoNano33BLESense
-			+ButtonLed
+			-ButtonLed
 				ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
 				ArduinoNano33BLESense\ButtonLed\konfiguraciya-soedinenij-dlya-proekta-knopki.jpg
+				ArduinoNano33BLESense\ButtonLed\vklyuchenie-lampochki-na-arduino-uno.jpg
+			-ClearEEPROM
 			ArduinoNano33BLESense\ArduinoNano33BLESense.md
 			ArduinoNano33BLESense\ArduinoNano33BLESense.md.backup
 			ArduinoNano33BLESense\raspinovka2.jpg
@@ -69,9 +71,17 @@ TvissKin
 		TvissKin.ppr
 [Open project files]
 0=ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
+1=ArduinoNano33BLESense\ClearEEPROM\ClearEEPROM.ino
+2=ArduinoNano33BLESense\MemoryGuide\MemoryGuide.ino
 [Selected Project Files]
 Main=
-Selected=ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
+Selected=ArduinoNano33BLESense\MemoryGuide\MemoryGuide.ino
 [ArduinoNano33BLESense\ButtonLed\ButtonLed.ino]
-TopLine=22
-Caret=48,17
+TopLine=1
+Caret=1,16
+[ArduinoNano33BLESense\ClearEEPROM\ClearEEPROM.ino]
+TopLine=1
+Caret=1,30
+[ArduinoNano33BLESense\MemoryGuide\MemoryGuide.ino]
+TopLine=1
+Caret=60,7
