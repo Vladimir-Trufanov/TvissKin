@@ -9,9 +9,7 @@
 ### Проекты
 #### [ButtonLed -  цифровой ввод-вывод](#buttonled)
 #### [ClearEEPROM - очистка энергонезависимой памяти контроллера](#cleareeprom)
-#### [MemoryGuide0 - руководство по памяти Arduino](#memoryguide)
-
-#### [MemoryGuide - руководство по памяти Arduino](MemoryGuide/ArduinoNano33BLESense.md) 
+#### [MemoryGuide - руководство по памяти Arduino](MemoryGuide/MemoryGuide.md) 
 
 ---
 
