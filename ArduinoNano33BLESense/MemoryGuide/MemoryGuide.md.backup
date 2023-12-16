@@ -258,7 +258,8 @@ const PROGMEM uint16_t NumSet[] = {0, 1, 1, 2, 3, 5, 8 ...};
 // Storing a char in PROGMEM
 const char greetMessage[] PROGMEM = {"Something"};
 ```
-Вы можете прочитать больше о PROGMEM в [справочнике по языку Arduino]().
+Вы можете прочитать больше о PROGMEM в [справочнике по языку Arduino](https://www.arduino.cc/reference/en/language/variables/utilities/progmem/).
+
 
 
 

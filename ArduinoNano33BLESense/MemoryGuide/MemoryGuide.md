@@ -260,10 +260,5 @@ const char greetMessage[] PROGMEM = {"Something"};
 ```
 Вы можете прочитать больше о PROGMEM в [справочнике по языку Arduino](https://www.arduino.cc/reference/en/language/variables/utilities/progmem/).
 
-
-
-
-
-
 ###### [в начало](#memoryguide)
 
