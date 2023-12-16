@@ -178,6 +178,90 @@ void loop
   EEPROM.read(address);
 }
 ```
+[Измерения использования SRAM в платах Arduino на базе ARM]():
+
+```
+extern "C" char* sbrk(int incr);
+
+void display_freeram()
+{
+  Serial.print(F("- SRAM left: "));
+  Serial.println(freeRam());
+}
+
+int freeRam() 
+{
+  char top;
+  return &top - reinterpret_cast<char*>(sbrk(0));
+}
+```
+Приведенный выше код взят из библиотеки Michael P. Flaga's [Arduino-MemoryFree](https://github.com/mpflaga/Arduino-MemoryFree).
+
+[Измерение памяти EEPROM]()
+
+Управление памятью EEPROM можно легко выполнять с помощью встроенных библиотек, уже установленных в Arduino IDE. The EEPROM библиотека может использоваться для чтения, записи и стирания данных из памяти EEPROM. Следующий код показывает, как байт информации может быть сохранен в памяти EEPROM, а затем считан с помощью write и read функции:
+```
+#include <EEPROM.h>
+
+void setup() {}
+
+void loop
+{
+  // Write data into an specific address of the EEPROM memory 
+  EEPROM.write(address, value);
+
+  // Read data of an specific address of the EEPROM memory 
+  EEPROM.read(address);
+}
+```
+Кроме того, можно очистить всю память EEPROM, установив для нее значение 0, как показано в приведенном ниже коде:
+```
+#include <EEPROM.h>
+
+void setup() {}
+
+void loop 
+{
+  for (int i = 0 ; i < EEPROM.length() ; i++) 
+  {
+    // Clear EEPROM memory 
+    EEPROM.write(i, 0);
+  }
+}
+```
+Для получения дополнительной информации о том, как управлять памятью EEPROM, вы можете обратиться к [этому руководству](https://docs.arduino.cc/learn/programming/eeprom-guide).
+
+[Оптимизация памяти SRAM с помощью строковой оболочки]().
+
+Serial.print() или Serial.println() в инструкциях использует пространство SRAM, что может быть удобно, но нежелательно. Идеальный способ использовать в этом случае  флэш-память вместо SRAM, это применять функцию F() - строковую оболочку для литералов. Например:
+```
+Serial.println(F("Something"));
+```
+Здесь строка "Something" с помощью F() оболочки будет перемещена во флэш-память и не будет использоваться пространство SRAM. Используя F() можно наблюдать, как оболочка выгружает такие данные во флэш-память вместо SRAM. Флэш-память намного вместительнее, чем SRAM, поэтому лучше использовать пространство флэш-памяти, чем SRAM, которое будет использовать раздел heap. Это не означает, что место в памяти будет доступно всегда, поскольку место во флэш-памяти ограничено. Не рекомендуется засорять код Serial.print() или Serial.println() инструкциями, но используйте их там, где они наиболее важны внутри кода.
+
+[Использование PROGMEM для хранения данных во флэш-памяти]().
+
+Глобальные и статические переменные передаются потоком в пространство heap, которое может понадобиться стеку. PROGMEM, что расшифровывается как программная память, может использоваться для хранения переменных во флэш-памяти, точно так же, как F() оболочка, описанная ранее, но использование PROGMEM имеет один недостаток - скорость чтения данных. 
+
+Использование оперативной памяти обеспечит гораздо более высокую скорость чтения данных, но PROGMEM поскольку в нем используется флэш-память, он будет работать медленнее ОЗУ при том же объеме данных. Таким образом, важно разрабатывать код, зная, какие переменные имеют решающее значение, а какие нет или имеют более низкий приоритет.
+
+Использование PROGMEM в Arduino на базе AVR показано в следующем примере:
+```
+#include <avr/pgmspace.h>
+
+// Basic PROGMEM structure 
+const PROGMEM DataType Variable_Name[] = {var0, var1, var2 ...};
+
+// Storing an unsigned, 16-bit, integer
+const PROGMEM uint16_t NumSet[] = {0, 1, 1, 2, 3, 5, 8 ...};
+
+// Storing a char in PROGMEM
+const char greetMessage[] PROGMEM = {"Something"};
+```
+Вы можете прочитать больше о PROGMEM в [справочнике по языку Arduino](https://www.arduino.cc/reference/en/language/variables/utilities/progmem/).
+
+
+
 
 
 

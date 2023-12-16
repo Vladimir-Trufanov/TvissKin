@@ -19,16 +19,30 @@ Extensions=*.*
 TvissKin
 	+TvissKin
 		+ArduinoNano33BLESense
+			-AnalogSensor
+				ArduinoNano33BLESense\AnalogSensor\AnalogSensor.ino
 			-ButtonLed
 				ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
 				ArduinoNano33BLESense\ButtonLed\konfiguraciya-soedinenij-dlya-proekta-knopki.jpg
 				ArduinoNano33BLESense\ButtonLed\vklyuchenie-lampochki-na-arduino-uno.jpg
 			-ClearEEPROM
 				ArduinoNano33BLESense\ClearEEPROM\ClearEEPROM.ino
-			+MemoryGuide
-				+MemoryFree-master
-					+Examples
-						+MemoryFree
+			+dht11
+				ArduinoNano33BLESense\dht11\dht11.ino
+			-MemoryGuide
+				-Arduino-MemoryFree-master
+					-examples
+						-BareMinimum
+							ArduinoNano33BLESense\MemoryGuide\Arduino-MemoryFree-master\examples\BareMinimum\BareMinimum.ino
+					ArduinoNano33BLESense\MemoryGuide\Arduino-MemoryFree-master\license
+					ArduinoNano33BLESense\MemoryGuide\Arduino-MemoryFree-master\MemoryFree.cpp
+					ArduinoNano33BLESense\MemoryGuide\Arduino-MemoryFree-master\MemoryFree.h
+					ArduinoNano33BLESense\MemoryGuide\Arduino-MemoryFree-master\pgmStrToRAM.cpp
+					ArduinoNano33BLESense\MemoryGuide\Arduino-MemoryFree-master\pgmStrToRAM.h
+					ArduinoNano33BLESense\MemoryGuide\Arduino-MemoryFree-master\README.md
+				-MemoryFree-master
+					-Examples
+						-MemoryFree
 							ArduinoNano33BLESense\MemoryGuide\MemoryFree-master\Examples\MemoryFree\Makefile
 							ArduinoNano33BLESense\MemoryGuide\MemoryFree-master\Examples\MemoryFree\MemoryFree.ino
 					ArduinoNano33BLESense\MemoryGuide\MemoryFree-master\keywords.txt
@@ -91,9 +105,17 @@ TvissKin
 		TvissKin.ppr
 [Open project files]
 0=ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
+1=ArduinoNano33BLESense\AnalogSensor\AnalogSensor.ino
+2=ArduinoNano33BLESense\dht11\dht11.ino
 [Selected Project Files]
 Main=
-Selected=ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
+Selected=ArduinoNano33BLESense\dht11\dht11.ino
 [ArduinoNano33BLESense\ButtonLed\ButtonLed.ino]
 TopLine=1
 Caret=1,16
+[ArduinoNano33BLESense\AnalogSensor\AnalogSensor.ino]
+TopLine=1
+Caret=1,8
+[ArduinoNano33BLESense\dht11\dht11.ino]
+TopLine=1
+Caret=3,51
