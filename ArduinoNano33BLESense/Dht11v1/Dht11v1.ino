@@ -19,6 +19,10 @@
 // - For ESP8266: Connect the sensor to GPIO2 or D4.
 DHT11 dht11(2);
 
+int temperature;
+int humidityErr;
+String messa;
+
 void setup()
 {
     // Initialize serial communication to allow debugging and data readout.
@@ -28,6 +32,14 @@ void setup()
 
 void loop()
 {
+    FromDht11(temperature, humidityErr, messa);
+    Serial.println(messa);
+
+    Serial.println(temperature);
+    Serial.println(humidityErr);
+    Serial.println(" ");
+
+    /*
     // Attempt to read the temperature and humidity values from the DHT11 sensor.
     int temperature = dht11.readTemperature();
 
@@ -64,11 +76,67 @@ void loop()
             Serial.println(DHT11::getErrorString(humidity));
         }
     }
-
+    */
+    
     // Wait for 1 seconds before the next reading.
     delay(1000);
 }
 
+void FromDht11 (int &temperature, int &humidityErr, String &messa)
+{
+   messa = "";
+   // Attempt to read the temperature and humidity values from the DHT11 sensor.
+   temperature = dht11.readTemperature();
+   // При использовании ESP32 или ESP8266 (архитектура xtensa) следует сделать
+   // небольшую задержку для стабилизации показаний
+   // при последовательном вызове методов
+   // delay(50);
+   humidityErr = dht11.readHumidity();
+   // Check the results of the readings.
+   // If there are no errors, print the temperature and humidity values.
+   // If there are errors, print the appropriate error messages.
+   if (temperature != DHT11::ERROR_CHECKSUM && temperature != DHT11::ERROR_TIMEOUT &&
+       humidityErr != DHT11::ERROR_CHECKSUM && humidityErr != DHT11::ERROR_TIMEOUT)
+   {
+      messa += "Температура: ";    
+      messa += temperature;    
+      messa += "°C\r\n";    
+      messa += "Влажность: ";    
+      messa += humidityErr;    
+      messa += "%";    
+
+      /*
+      Serial.print("Temperature: ");
+      Serial.print(temperature);
+      Serial.println(" °C\r\n");
+
+      Serial.print("Humidity: ");
+      Serial.print(humidity);
+      Serial.println(" %");
+      */
+   }
+   else
+   {
+      if (humidityErr == DHT11::ERROR_TIMEOUT || humidityErr == DHT11::ERROR_CHECKSUM)
+      {
+         messa += "Ошибка чтения влажности: "+DHT11::getErrorString(humidityErr); 
+         humidityErr=-2;
+         /*   
+         Serial.print("Humidity Reading Error: ");
+         Serial.println(DHT11::getErrorString(humidity));
+         */   
+      }
+      if (temperature == DHT11::ERROR_TIMEOUT || temperature == DHT11::ERROR_CHECKSUM)
+      {
+         messa += "Ошибка чтения температуры: "+DHT11::getErrorString(temperature);    
+         humidityErr=-1;
+         /*
+         Serial.print("Temperature Reading Error: ");
+         Serial.println(DHT11::getErrorString(temperature));
+         */
+      }
+   }
+}
 
 
 

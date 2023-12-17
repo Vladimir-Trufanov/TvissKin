@@ -54,13 +54,17 @@
 
 2) Подключение символьного дисплея LCD1602 IIC/I2C к Arduino Uno, на который будет выводиться информация о температуре и влажности.
 ```
-Arduino	    LCD1602 IIC/I2C	Цвет проводов
+Arduino	    LCD1602 IIC/I2C	     LCD1602A
 
-    GND	    GND	 Черный
-     5V	    VCC	 Красный
+    GND	    GND	 Черный          VSS
+     5V	    VCC	 Красный         VDD
      A4	    SDA	 Коричневый
      A5	    SCL	 Серый
+ бббббббббю     
 ```
+
+![Подключение для LCD1602A](Dht11/RoboChip.jpg)
+
 ![Подключение LCD1602 IIC/I2C к Arduino](Dht11/podklyuchenie-lcd1602-iici2c-k-arduino.jpg)
 
 ###### [к списку проектов](#%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B)
