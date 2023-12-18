@@ -1,27 +1,24 @@
+/* ========================================================================= */
+/*   Dht11v2.ino                                                             */
+/*   (c) 2023-12-12 Труфанов Владимир                                        */
+/*                                                                           */
+/*   Description:      скетч для иллюстрации совместного подключения на двух */
+/*      макетных платах LCD1602a и DHT11 (с библиотекой версии DHT11-2.0.0). */
+/* ========================================================================= */
 
-/**
- * DHT11 Sensor Reader for Arduino
- * This sketch reads temperature and humidity data from the DHT11 sensor and prints the values to the serial port.
- * It also handles potential error states that might occur during reading.
- *
- * Author: Dhruba Saha
- * Version: 2.0.0
- * License: MIT
- */
-
-// Include the DHT11 library for interfacing with the sensor.
-// #include <DHT11.h>
+// Подключаем библиотеку версии DHT11-2.0.0
 #include "DHT11.h"
+// Подключаем штатную библиотеку LiquidCrystal.h
 #include <LiquidCrystal.h>
 
+// Создаем объект дисплея на заданных контактах
+//               [RS, E, D4, D5, D6, D7] 
+LiquidCrystal lcd (3, 4,  5,  6,  7,  8);   
 // Создаем объект датчика DHT11 на 2 пине
 // - For Arduino: Connect the sensor to Digital I/O Pin 2.
 // - For ESP32: Connect the sensor to pin GPIO2 or P2.
 // - For ESP8266: Connect the sensor to GPIO2 or D4.
 DHT11 dht11(2);
-// Создаем объект дисплея на заданных контактах
-//               [RS, E, D4, D5, D6, D7] 
-LiquidCrystal lcd (8, 7,  6,  5,  4,  3);   
 
 int temperature;
 int humidityErr;
@@ -29,31 +26,30 @@ String messa;
 
 void setup()
 {
-   // Initialize serial communication to allow debugging and data readout.
-   // Using a baud rate of 9600 bps.
-   Serial.begin(9600);
    // Инициируем дисплей на 16 столбцов и 2 строки (LCD 16x2)
    lcd.begin(16,2);  
     
-   lcd.setCursor(0,0);             // Установить курсор на первыю строку
-   lcd.print("Hello, world");      // Вывести текст
-   lcd.setCursor(0,1);             // Установить курсор на вторую строку
-   lcd.print("www.robotchip.ru");  // Вывести текст
+   lcd.setCursor(0,0);                // установили курсор на первую строку
+   lcd.print("Hello, Arduino!");       // вывели текст
+   lcd.setCursor(0,1);                // установили курсор на вторую строку
+   lcd.print("www.ittve.me");         // вывели текст
+
+   // Initialize serial communication to allow debugging and data readout.
+   // Using a baud rate of 9600 bps.
+   Serial.begin(9600);
 }
 
 void loop()
 {
-  /*
-    // Wait for 1 seconds before the next reading.
-    delay(1000);
+   // Wait for 1 seconds before the next reading.
+   delay(1000);
 
-    FromDht11(temperature, humidityErr, messa);
-    Serial.println(messa);
+   FromDht11(temperature, humidityErr, messa);
+   Serial.println(messa);
 
-    Serial.println(temperature);
-    Serial.println(humidityErr);
-    Serial.println(" ");
-  */
+   Serial.println(temperature);
+   Serial.println(humidityErr);
+   Serial.println(" ");
 }
 
 void FromDht11 (int &temperature, int &humidityErr, String &messa)
@@ -93,63 +89,3 @@ void FromDht11 (int &temperature, int &humidityErr, String &messa)
       }
    }
 }
-
-
-
-
-
-
-
-/*
-#include <Wire.h>
-#include <LiquidCrystal_I2C.h>
-LiquidCrystal_I2C lcd(0x27, 16, 2);
-#include <dht11.h>
-dht11 sensor;
-#define DHT11PIN 2
-byte degree[8] = // кодируем символ градуса
-{
-  B00111,
-  B00101,
-  B00111,
-  B00000,
-  B00000,
-  B00000,
-  B00000,
-};
-void setup()
-{
-  lcd.init();
-  lcd.backlight();
-  lcd.createChar(1, degree); // Создаем символ под номером 1
-}
-void loop()
-{
-  int chk = sensor.read(DHT11PIN);
-  lcd.setCursor(0, 0);
-  lcd.print("Hum:          %");
-  lcd.setCursor(11, 0);
-  lcd.print(sensor.humidity);
-  lcd.setCursor(0, 1);
-  lcd.print("temp:         \1C");
-  lcd.setCursor(11, 1);
-  lcd.print(sensor.temperature);
-  delay(2000);
-}
-*/
-
-/*
-void loop()
-{
-  int chk = sensor.read(DHT11PIN);
-  lcd.setCursor(0, 0);
-  lcd.print("Hum:          %");
-  lcd.setCursor(11, 0);
-  lcd.print(sensor.humidity);
-  lcd.setCursor(0, 1);
-  lcd.print("temp:         1C");
-  lcd.setCursor(11, 1);
-  lcd.print(sensor.temperature);
-  delay(2000);
-}
-*/

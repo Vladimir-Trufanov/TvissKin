@@ -27,84 +27,51 @@ TvissKin
 				ArduinoNano33BLESense\ButtonLed\vklyuchenie-lampochki-na-arduino-uno.jpg
 			-ClearEEPROM
 				ArduinoNano33BLESense\ClearEEPROM\ClearEEPROM.ino
-			-Dht11
-				-DHT11-1.0.0
-					-examples
-						-ReadHumidity
-							ArduinoNano33BLESense\Dht11\DHT11-1.0.0\examples\ReadHumidity\ReadHumidity.ino
-						-ReadTempAndHumidity
-							ArduinoNano33BLESense\Dht11\DHT11-1.0.0\examples\ReadTempAndHumidity\ReadTempAndHumidity.ino
-						-ReadTemperature
-							ArduinoNano33BLESense\Dht11\DHT11-1.0.0\examples\ReadTemperature\ReadTemperature.ino
-					-src
-						ArduinoNano33BLESense\Dht11\DHT11-1.0.0\src\DHT11.cpp
-						ArduinoNano33BLESense\Dht11\DHT11-1.0.0\src\DHT11.h
-					ArduinoNano33BLESense\Dht11\DHT11-1.0.0\library.properties
-					ArduinoNano33BLESense\Dht11\DHT11-1.0.0\LICENSE
-					ArduinoNano33BLESense\Dht11\DHT11-1.0.0\README.md
+			+Dht11v2
 				-DHT11-2.0.0
 					-assets
-						ArduinoNano33BLESense\Dht11\DHT11-2.0.0\assets\communication.png
+						ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\assets\communication.png
 					-examples
 						-ReadHumidity
-							ArduinoNano33BLESense\Dht11\DHT11-2.0.0\examples\ReadHumidity\ReadHumidity.ino
+							ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\examples\ReadHumidity\ReadHumidity.ino
 						-ReadPlot
-							ArduinoNano33BLESense\Dht11\DHT11-2.0.0\examples\ReadPlot\ReadPlot.ino
+							ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\examples\ReadPlot\ReadPlot.ino
 						-ReadTempAndHumidity
-							ArduinoNano33BLESense\Dht11\DHT11-2.0.0\examples\ReadTempAndHumidity\ReadTempAndHumidity.ino
+							ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\examples\ReadTempAndHumidity\ReadTempAndHumidity.ino
 						-ReadTemperature
-							ArduinoNano33BLESense\Dht11\DHT11-2.0.0\examples\ReadTemperature\ReadTemperature.ino
+							ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\examples\ReadTemperature\ReadTemperature.ino
 					-src
-						ArduinoNano33BLESense\Dht11\DHT11-2.0.0\src\DHT11.cpp
-						ArduinoNano33BLESense\Dht11\DHT11-2.0.0\src\DHT11.h
-					ArduinoNano33BLESense\Dht11\DHT11-2.0.0\CODE_OF_CONDUCT.md
-					ArduinoNano33BLESense\Dht11\DHT11-2.0.0\CONTRIBUTING.md
-					ArduinoNano33BLESense\Dht11\DHT11-2.0.0\library.properties
-					ArduinoNano33BLESense\Dht11\DHT11-2.0.0\LICENSE
-					ArduinoNano33BLESense\Dht11\DHT11-2.0.0\README.md
-				-LiquidCrystal_I2C_V112
-					-examples
-						-CustomChars
-							ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\examples\CustomChars\CustomChars.pde
-						-HelloWorld
-							-HelloWorld
-								ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\examples\HelloWorld\HelloWorld\HelloWorld.ino
-								ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\examples\HelloWorld\HelloWorld\LiquidCrystal_I2C.cpp
-								ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\examples\HelloWorld\HelloWorld\LiquidCrystal_I2C.h
-							ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\examples\HelloWorld\HelloWorld.pde
-						-SerialDisplay
-							ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\examples\SerialDisplay\SerialDisplay.pde
-					ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\keywords.txt
-					ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\library.json
-					ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\library.properties
-					ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\LiquidCrystal_I2C.cpp
-					ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\LiquidCrystal_I2C.h
-					ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\LiquidCrystal_I2C.o
-					ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\README.md
-				-obzor-lcd-displeya-1602a
-					-obzor-lcd-displeya-1602a
-						ArduinoNano33BLESense\Dht11\obzor-lcd-displeya-1602a\obzor-lcd-displeya-1602a\obzor-lcd-displeya-1602a.ino
-				ArduinoNano33BLESense\Dht11\DHT11 — äaò÷èê òeìïeðaòóðû è âëaæíocòè.md
-				ArduinoNano33BLESense\Dht11\DHT11.cpp
-				ArduinoNano33BLESense\Dht11\DHT11.h
-				ArduinoNano33BLESense\Dht11\Dht11.ino
-				ArduinoNano33BLESense\Dht11\otlichiya-datchika-dht11-i-modulya-dht11.jpg
-				ArduinoNano33BLESense\Dht11\podklyuchenie-dht11-k-arduino.jpg
-				ArduinoNano33BLESense\Dht11\podklyuchenie-lcd1602-iici2c-k-arduino.jpg
-				ArduinoNano33BLESense\Dht11\racpinovka-vyvodov-dht11.jpg
-				ArduinoNano33BLESense\Dht11\razmerydht11.jpg
-				ArduinoNano33BLESense\Dht11\RoboChip.jpg
-				ArduinoNano33BLESense\Dht11\schityvanie-pokazanij-dht11-i-vyvod-na-lcd-1602-i2c-displej.jpg
-				ArduinoNano33BLESense\Dht11\shema-podklyucheniya-datchika-dht11.jpg
-				ArduinoNano33BLESense\Dht11\vremennaya-diagramma-dht11.jpg
-			-Dht11v1
-				ArduinoNano33BLESense\Dht11v1\DHT11.cpp
-				ArduinoNano33BLESense\Dht11v1\DHT11.h
-				ArduinoNano33BLESense\Dht11v1\Dht11v1.ino
-			-Dht11v2
+						ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\src\DHT11.cpp
+						ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\src\DHT11.h
+					ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\CODE_OF_CONDUCT.md
+					ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\CONTRIBUTING.md
+					ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\library.properties
+					ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\LICENSE
+					ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\README.md
 				ArduinoNano33BLESense\Dht11v2\DHT11.cpp
 				ArduinoNano33BLESense\Dht11v2\DHT11.h
 				ArduinoNano33BLESense\Dht11v2\Dht11v2.ino
+			+Dht11v3
+				-DHT11-1.0.0
+					-examples
+						+ReadHumidity
+							ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\examples\ReadHumidity\ReadHumidity.ino
+						-ReadTempAndHumidity
+							ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\examples\ReadTempAndHumidity\ReadTempAndHumidity.ino
+						+ReadTemperature
+							ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\examples\ReadTemperature\ReadTemperature.ino
+					-src
+						ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\src\DHT11.cpp
+						ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\src\DHT11.h
+					ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\library.properties
+					ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\LICENSE
+					ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\README.md
+				-fil
+					ArduinoNano33BLESense\Dht11v3\fil\DHT11.cpp
+					ArduinoNano33BLESense\Dht11v3\fil\DHT11.h
+				ArduinoNano33BLESense\Dht11v3\DHT11.cpp
+				ArduinoNano33BLESense\Dht11v3\DHT11.h
+				ArduinoNano33BLESense\Dht11v3\Dht11v3.ino
 			-MemoryGuide
 				-Arduino-MemoryFree-master
 					-examples
@@ -136,9 +103,7 @@ TvissKin
 				ArduinoNano33BLESense\MemoryGuide\Von-Neumann-architecture.png
 			+OnlyLCD1602a
 				ArduinoNano33BLESense\OnlyLCD1602a\OnlyLCD1602a.ino
-			ArduinoNano33BLESense\ArduinoNano33BLESense.html
 			ArduinoNano33BLESense\ArduinoNano33BLESense.md
-			ArduinoNano33BLESense\ArduinoNano33BLESense.md.backup
 			ArduinoNano33BLESense\raspinovka2.jpg
 			ArduinoNano33BLESense\raspinovka-platy-arduino-nano-33-ble-sense.jpg
 		-FirstMeeting
@@ -181,21 +146,9 @@ TvissKin
 		TvissKin.ppr
 [Open project files]
 0=ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
-1=ArduinoNano33BLESense\Dht11v2\Dht11v2.ino
-2=ArduinoNano33BLESense\OnlyLCD1602a\OnlyLCD1602a.ino
-3=ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\examples\HelloWorld\HelloWorld.pde
 [Selected Project Files]
 Main=
-Selected=ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\examples\HelloWorld\HelloWorld.pde
+Selected=ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
 [ArduinoNano33BLESense\ButtonLed\ButtonLed.ino]
 TopLine=1
-Caret=1,15
-[ArduinoNano33BLESense\Dht11v2\Dht11v2.ino]
-TopLine=13
-Caret=1,49
-[ArduinoNano33BLESense\OnlyLCD1602a\OnlyLCD1602a.ino]
-TopLine=1
-Caret=2,33
-[ArduinoNano33BLESense\Dht11\LiquidCrystal_I2C_V112\examples\HelloWorld\HelloWorld.pde]
-TopLine=1
-Caret=1,29
+Caret=3,13
