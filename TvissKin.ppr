@@ -20,14 +20,17 @@ TvissKin
 	+TvissKin
 		+ArduinoNano33BLESense
 			-AnalogSensor
+				-Oled128x64Trema
 				ArduinoNano33BLESense\AnalogSensor\AnalogSensor.ino
+				ArduinoNano33BLESense\AnalogSensor\AnalogSensor.md
+				ArduinoNano33BLESense\AnalogSensor\AnalogSensor.md.backup
 			-ButtonLed
 				ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
 				ArduinoNano33BLESense\ButtonLed\konfiguraciya-soedinenij-dlya-proekta-knopki.jpg
 				ArduinoNano33BLESense\ButtonLed\vklyuchenie-lampochki-na-arduino-uno.jpg
 			-ClearEEPROM
 				ArduinoNano33BLESense\ClearEEPROM\ClearEEPROM.ino
-			+Dht11v2
+			-Dht11v2
 				-DHT11-2.0.0
 					-assets
 						ArduinoNano33BLESense\Dht11v2\DHT11-2.0.0\assets\communication.png
@@ -51,14 +54,14 @@ TvissKin
 				ArduinoNano33BLESense\Dht11v2\DHT11.cpp
 				ArduinoNano33BLESense\Dht11v2\DHT11.h
 				ArduinoNano33BLESense\Dht11v2\Dht11v2.ino
-			+Dht11v3
+			-Dht11v3
 				-DHT11-1.0.0
 					-examples
-						+ReadHumidity
+						-ReadHumidity
 							ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\examples\ReadHumidity\ReadHumidity.ino
 						-ReadTempAndHumidity
 							ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\examples\ReadTempAndHumidity\ReadTempAndHumidity.ino
-						+ReadTemperature
+						-ReadTemperature
 							ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\examples\ReadTemperature\ReadTemperature.ino
 					-src
 						ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\src\DHT11.cpp
@@ -66,12 +69,19 @@ TvissKin
 					ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\library.properties
 					ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\LICENSE
 					ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\README.md
-				-fil
-					ArduinoNano33BLESense\Dht11v3\fil\DHT11.cpp
-					ArduinoNano33BLESense\Dht11v3\fil\DHT11.h
 				ArduinoNano33BLESense\Dht11v3\DHT11.cpp
 				ArduinoNano33BLESense\Dht11v3\DHT11.h
 				ArduinoNano33BLESense\Dht11v3\Dht11v3.ino
+				ArduinoNano33BLESense\Dht11v3\otlichiya-datchika-dht11-i-modulya-dht11.jpg
+				ArduinoNano33BLESense\Dht11v3\podklyuchenie-dht11-k-arduino.jpg
+				ArduinoNano33BLESense\Dht11v3\podklyuchenie-lcd1602a-k-arduino.jpg
+				ArduinoNano33BLESense\Dht11v3\racpinovka-vyvodov-dht11.jpg
+				ArduinoNano33BLESense\Dht11v3\razmerydht11.jpg
+				ArduinoNano33BLESense\Dht11v3\schityvanie-pokazanij-dht11-i-vyvod-na-lcd-1602-i2c-displej.jpg
+				ArduinoNano33BLESense\Dht11v3\shema-podklyucheniya-datchika-dht11.jpg
+				ArduinoNano33BLESense\Dht11v3\vremennaya-diagramma-dht11.jpg
+			+I2C-Scanner
+				ArduinoNano33BLESense\I2C-Scanner\I2C-Scanner.ino
 			-MemoryGuide
 				-Arduino-MemoryFree-master
 					-examples
@@ -101,9 +111,10 @@ TvissKin
 				ArduinoNano33BLESense\MemoryGuide\MemoryGuide.md.backup
 				ArduinoNano33BLESense\MemoryGuide\organizaciya-pamyati-v-mikrokontrollerah-na-baze-arm.png
 				ArduinoNano33BLESense\MemoryGuide\Von-Neumann-architecture.png
-			+OnlyLCD1602a
+			-OnlyLCD1602a
 				ArduinoNano33BLESense\OnlyLCD1602a\OnlyLCD1602a.ino
 			ArduinoNano33BLESense\ArduinoNano33BLESense.md
+			ArduinoNano33BLESense\ArduinoNano33BLESense.md.backup
 			ArduinoNano33BLESense\raspinovka2.jpg
 			ArduinoNano33BLESense\raspinovka-platy-arduino-nano-33-ble-sense.jpg
 		-FirstMeeting
@@ -146,9 +157,13 @@ TvissKin
 		TvissKin.ppr
 [Open project files]
 0=ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
+1=ArduinoNano33BLESense\I2C-Scanner\I2C-Scanner.ino
 [Selected Project Files]
 Main=
-Selected=ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
+Selected=ArduinoNano33BLESense\I2C-Scanner\I2C-Scanner.ino
 [ArduinoNano33BLESense\ButtonLed\ButtonLed.ino]
 TopLine=1
 Caret=3,13
+[ArduinoNano33BLESense\I2C-Scanner\I2C-Scanner.ino]
+TopLine=1
+Caret=1,1

@@ -1,0 +1,82 @@
+### AnalogSensor
+### Аналоговый ввод / вывод
+
+Arduino Nano 33 BLE Sense обеспечивает аналоговый ввод-вывод, чтобы
+мы могли взаимодействовать с сенсорными и исполнительными
+устройствами. Аналоговые выводы ввода / вывода помечены как Ax, где x 
+- номер аналогового вывода. Вы можете увидеть эти ярлыки на задней
+панели платы Arduino Nano 33 BLE Sense.
+
+ Arduino Nano 33 BLE Sense имеет восемь аналоговых входов (АЦП).
+ К сожалению, Arduino Nano 33 BLE Sense не поддерживает аналоговый
+выход (ЦАП), но мы можем использовать ШИМ как аналоговый выход. 
+Для моделирования АЦП Arduino Nano 33 BLE Sense обеспечивает
+разрешение АЦП с 12 битами.
+
+#### Занятия
+
+#### [Oled128x64Trema - первое подключение OLED-дисплея I2C к Arduino Uno](#oled128x64trema)
+
+###### [к занятиям]()
+
+###### [наверх к ArduinoNano33BLESense](../ArduinoNano33BLESense.md)
+
+---
+
+#### Oled128x64Trema
+#### Первое подключение OLED-дисплея I2C к Arduino Uno
+
+OLED-дисплей I2C в экспериментах с Arduino Nano 33 BLE Sense (Arduino Uno) будет использоваться для вывода показаний датчиков и других целей.
+
+ Мы используем OLED-дисплей с интерфейсом I2C, поэтому и подключаем дисплей к Arduino Nano 33 BLE Sense (Arduino Uno) через контакты I2C. 
+
+Выполняем разводку следующим образом:
+```
+• SDA подключаем к выводу Arduino A4 (или SDA) синим проводом;
+• SCL подключается к выводу Arduino A5 (или SCL) зеленым проводом;
+• VCC подключен к Arduino 3.3V красным проводом;
+• GND подключается к контакту GND Arduino черным проводом.
+```
+
+!{}oled-displej-i2c
+
+#### Проверка адреса I2C OLED-дисплея
+
+Теперь с помощью программы [I2C-Scanner](../I2C-Scanner/I2C-Scanner.ino) можем выполнить проверку адресов I2C всех устройств. Это даст нам адрес с дисплея OLED I2C:
+```
+I2C Scanner
+Scanning...
+I2C device found at address 0x3C
+done
+```
+
+#### Установка библиотеки дисплеев OLED I2C
+
+Для работы с OLED-дисплеем I2C на Arduino необходимо установить
+две библиотеки от Adafruit.
+
+• [Adafruit_SSD1306: https://github.com/adafruit/Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306)
+
+• [Adafruit GFX Library: https://github.com/adafruit/Adafruit-GFX-Library](https://github.com/adafruit/Adafruit-GFX-Library)
+
+#### Тестирование дисплея OLED I2C
+
+After the Adafruit_SSD1306 library is installed, you can test your OLED I2C
+display using program samples from the Adafruit_SSD1306 library. From
+the File menu, select Examples ➤ Adafruit_SSD1306 ➤ ssd1306_128x64_
+i2c.
+
+#### [Замечание от 2023-12-19:]() 
+
+После перемещения библиотек в библиотечный каталог тестирование не получилось. Затем библиотеки были удалены.
+
+Пришлось обе библиотеки устанавливать из оболочки Arduino 1.8.18:
+[Adafruit_SSD1306, v2.5.9]() и [Adafruit-GFX-Library,v1.11.9](). Вместе с ними подтянулась библиотека [Adafruit BusIO, v1.14.5]().
+
+[На удивление]() они же оказались и в Arduino 2.2.1, и тесты прошли в обеих IDE.
+
+
+
+
+
+
