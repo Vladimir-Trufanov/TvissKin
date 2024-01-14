@@ -20,10 +20,118 @@ TvissKin
 	+TvissKin
 		+ArduinoNano33BLESense
 			-AnalogSensor
-				-Oled128x64Trema
+				-Adafruit_SSD1306-master
+					-examples
+						-OLED_featherwing
+							ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\examples\OLED_featherwing\OLED_featherwing.ino
+						-ssd1306_128x32_i2c
+							ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\examples\ssd1306_128x32_i2c\ssd1306_128x32_i2c.ino
+						-ssd1306_128x32_spi
+							ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\examples\ssd1306_128x32_spi\ssd1306_128x32_spi.ino
+						-ssd1306_128x64_i2c
+							ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\examples\ssd1306_128x64_i2c\ssd1306_128x64_i2c.ino
+						-ssd1306_128x64_spi
+							ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\examples\ssd1306_128x64_spi\ssd1306_128x64_spi.ino
+					-scripts
+						ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\scripts\make_splash.py
+						ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\scripts\Makefile
+						ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\scripts\splash1.png
+						ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\scripts\splash2.png
+					ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\Adafruit_SSD1306.cpp
+					ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\Adafruit_SSD1306.h
+					ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\CMakeLists.txt
+					ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\component.mk
+					ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\library.properties
+					ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\license.txt
+					ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\README.md
+					ArduinoNano33BLESense\AnalogSensor\Adafruit_SSD1306-master\splash.h
+				-Adafruit-GFX-Library-master
+					-examples
+						-GFXcanvas
+							ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\examples\GFXcanvas\GFXcanvas.ino
+							ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\examples\GFXcanvas\GFXcanvasSerialDemo.cpp
+							ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\examples\GFXcanvas\GFXcanvasSerialDemo.h
+						-mock_ili9341
+							ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\examples\mock_ili9341\mock_ili9341.ino
+					-fontconvert
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\fontconvert\bdf2adafruit.py
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\fontconvert\fontconvert.c
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\fontconvert\fontconvert_win.md
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\fontconvert\Makefile
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\fontconvert\makefonts.sh
+					-Fonts
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMono12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMono18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMono24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMono9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoBold12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoBold18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoBold24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoBold9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoBoldOblique12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoBoldOblique18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoBoldOblique24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoBoldOblique9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoOblique12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoOblique18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoOblique24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeMonoOblique9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSans12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSans18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSans24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSans9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansBold12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansBold18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansBold24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansBold9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansBoldOblique12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansBoldOblique18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansBoldOblique24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansBoldOblique9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansOblique12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansOblique18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansOblique24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSansOblique9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerif12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerif18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerif24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerif9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifBold12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifBold18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifBold24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifBold9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifBoldItalic12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifBoldItalic18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifBoldItalic24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifBoldItalic9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifItalic12pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifItalic18pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifItalic24pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\FreeSerifItalic9pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\Org_01.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\Picopixel.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\Tiny3x3a2pt7b.h
+						ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Fonts\TomThumb.h
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Adafruit_GFX.cpp
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Adafruit_GFX.h
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Adafruit_GrayOLED.cpp
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Adafruit_GrayOLED.h
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Adafruit_SPITFT.cpp
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Adafruit_SPITFT.h
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\Adafruit_SPITFT_Macros.h
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\CMakeLists.txt
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\component.mk
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\gfxfont.h
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\glcdfont.c
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\library.properties
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\license.txt
+					ArduinoNano33BLESense\AnalogSensor\Adafruit-GFX-Library-master\README.md
+				-ssd1306_128x64_i2c
+					ArduinoNano33BLESense\AnalogSensor\ssd1306_128x64_i2c\ssd1306_128x64_i2c.ino
 				ArduinoNano33BLESense\AnalogSensor\AnalogSensor.ino
 				ArduinoNano33BLESense\AnalogSensor\AnalogSensor.md
 				ArduinoNano33BLESense\AnalogSensor\AnalogSensor.md.backup
+				ArduinoNano33BLESense\AnalogSensor\oled-displej-i2c.jpg
 			-ButtonLed
 				ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
 				ArduinoNano33BLESense\ButtonLed\konfiguraciya-soedinenij-dlya-proekta-knopki.jpg
@@ -71,7 +179,7 @@ TvissKin
 					ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\README.md
 				ArduinoNano33BLESense\Dht11v3\DHT11.cpp
 				ArduinoNano33BLESense\Dht11v3\DHT11.h
-				ArduinoNano33BLESense\Dht11v3\Dht11v3.ino
+				ArduinoNano33BLESense\LSM9DS1\LSM9DS1.ino
 				ArduinoNano33BLESense\Dht11v3\otlichiya-datchika-dht11-i-modulya-dht11.jpg
 				ArduinoNano33BLESense\Dht11v3\podklyuchenie-dht11-k-arduino.jpg
 				ArduinoNano33BLESense\Dht11v3\podklyuchenie-lcd1602a-k-arduino.jpg
@@ -82,6 +190,7 @@ TvissKin
 				ArduinoNano33BLESense\Dht11v3\vremennaya-diagramma-dht11.jpg
 			+I2C-Scanner
 				ArduinoNano33BLESense\I2C-Scanner\I2C-Scanner.ino
+			-LSM9DS1
 			-MemoryGuide
 				-Arduino-MemoryFree-master
 					-examples
@@ -115,8 +224,10 @@ TvissKin
 				ArduinoNano33BLESense\OnlyLCD1602a\OnlyLCD1602a.ino
 			ArduinoNano33BLESense\ArduinoNano33BLESense.md
 			ArduinoNano33BLESense\ArduinoNano33BLESense.md.backup
+			ArduinoNano33BLESense\Arduino-Nano-33-Ble-Sense-datasheet.pdf
 			ArduinoNano33BLESense\raspinovka2.jpg
 			ArduinoNano33BLESense\raspinovka-platy-arduino-nano-33-ble-sense.jpg
+			ArduinoNano33BLESense\ ÛÌË‡‚‡Ì ¿„ÛÒ - œ–Œ≈ “€ IoT Ò ARDUINO NANO 33-BLE-Sense.pdf
 		-FirstMeeting
 			-ArduinoANN
 				FirstMeeting\ArduinoANN\ArduinoANN.ino
@@ -151,19 +262,20 @@ TvissKin
 			Kesha\Kesha.md
 			Kesha\opredelenie-chisla-sochetanij.jpg
 		-TCppPrown
+			-examples
+			-src
+			TCppPrown\README.md
+			TCppPrown\README.md.backup
 		-TCppTools
 		LICENSE
 		README.md
+		README.md.backup
 		TvissKin.ppr
 [Open project files]
-0=ArduinoNano33BLESense\ButtonLed\ButtonLed.ino
-1=ArduinoNano33BLESense\I2C-Scanner\I2C-Scanner.ino
+0=ArduinoNano33BLESense\LSM9DS1\LSM9DS1.ino
 [Selected Project Files]
 Main=
-Selected=ArduinoNano33BLESense\I2C-Scanner\I2C-Scanner.ino
-[ArduinoNano33BLESense\ButtonLed\ButtonLed.ino]
+Selected=ArduinoNano33BLESense\LSM9DS1\LSM9DS1.ino
+[ArduinoNano33BLESense\LSM9DS1\LSM9DS1.ino]
 TopLine=1
-Caret=3,13
-[ArduinoNano33BLESense\I2C-Scanner\I2C-Scanner.ino]
-TopLine=1
-Caret=1,1
+Caret=1,73
