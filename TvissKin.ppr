@@ -179,7 +179,7 @@ TvissKin
 					ArduinoNano33BLESense\Dht11v3\DHT11-1.0.0\README.md
 				ArduinoNano33BLESense\Dht11v3\DHT11.cpp
 				ArduinoNano33BLESense\Dht11v3\DHT11.h
-				ArduinoNano33BLESense\LSM9DS1\LSM9DS1.ino
+				ArduinoNano33BLESense\Dht11v3\Dht11v3.ino
 				ArduinoNano33BLESense\Dht11v3\otlichiya-datchika-dht11-i-modulya-dht11.jpg
 				ArduinoNano33BLESense\Dht11v3\podklyuchenie-dht11-k-arduino.jpg
 				ArduinoNano33BLESense\Dht11v3\podklyuchenie-lcd1602a-k-arduino.jpg
@@ -188,9 +188,10 @@ TvissKin
 				ArduinoNano33BLESense\Dht11v3\schityvanie-pokazanij-dht11-i-vyvod-na-lcd-1602-i2c-displej.jpg
 				ArduinoNano33BLESense\Dht11v3\shema-podklyucheniya-datchika-dht11.jpg
 				ArduinoNano33BLESense\Dht11v3\vremennaya-diagramma-dht11.jpg
-			+I2C-Scanner
+			-I2C-Scanner
 				ArduinoNano33BLESense\I2C-Scanner\I2C-Scanner.ino
 			-LSM9DS1
+				ArduinoNano33BLESense\LSM9DS1\LSM9DS1.ino
 			-MemoryGuide
 				-Arduino-MemoryFree-master
 					-examples
@@ -220,6 +221,8 @@ TvissKin
 				ArduinoNano33BLESense\MemoryGuide\MemoryGuide.md.backup
 				ArduinoNano33BLESense\MemoryGuide\organizaciya-pamyati-v-mikrokontrollerah-na-baze-arm.png
 				ArduinoNano33BLESense\MemoryGuide\Von-Neumann-architecture.png
+			+MP34DT06JTR
+				ArduinoNano33BLESense\MP34DT06JTR\MP34DT06JTR.ino
 			-OnlyLCD1602a
 				ArduinoNano33BLESense\OnlyLCD1602a\OnlyLCD1602a.ino
 			ArduinoNano33BLESense\ArduinoNano33BLESense.md
@@ -273,9 +276,13 @@ TvissKin
 		TvissKin.ppr
 [Open project files]
 0=ArduinoNano33BLESense\LSM9DS1\LSM9DS1.ino
+1=ArduinoNano33BLESense\MP34DT06JTR\MP34DT06JTR.ino
 [Selected Project Files]
 Main=
-Selected=ArduinoNano33BLESense\LSM9DS1\LSM9DS1.ino
+Selected=ArduinoNano33BLESense\MP34DT06JTR\MP34DT06JTR.ino
 [ArduinoNano33BLESense\LSM9DS1\LSM9DS1.ino]
-TopLine=1
+TopLine=34
 Caret=1,73
+[ArduinoNano33BLESense\MP34DT06JTR\MP34DT06JTR.ino]
+TopLine=3
+Caret=1,67
