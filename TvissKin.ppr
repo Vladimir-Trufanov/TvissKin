@@ -6,7 +6,7 @@ Compilator.ProgSaveAll=0
 Compilator.ProgRunSelection=0
 Compilator.LogType=0
 Compilator.LogEncoding=0
-DefaultDir=C:\TvissKin
+DefaultDir=C:\Users\Евгеньевич\TvissKin
 DefaultCP=0
 LogtoEnd=1
 DontOpen=0
@@ -17,8 +17,11 @@ HTServer=localhost
 Extensions=*.*
 [Project tree]
 TvissKin
-	+TvissKin
-		+ArduinoNano33BLESense
+	-TvissKin
+		-Anaconda
+			Anaconda\NewDoc.jpg
+			Anaconda\zapusk-jupiter.jpg
+		-ArduinoNano33BLESense
 			-AnalogSensor
 				-Adafruit_SSD1306-master
 					-examples
@@ -221,7 +224,7 @@ TvissKin
 				ArduinoNano33BLESense\MemoryGuide\MemoryGuide.md.backup
 				ArduinoNano33BLESense\MemoryGuide\organizaciya-pamyati-v-mikrokontrollerah-na-baze-arm.png
 				ArduinoNano33BLESense\MemoryGuide\Von-Neumann-architecture.png
-			+MP34DT06JTR
+			-MP34DT06JTR
 				ArduinoNano33BLESense\MP34DT06JTR\MP34DT06JTR.ino
 			-OnlyLCD1602a
 				ArduinoNano33BLESense\OnlyLCD1602a\OnlyLCD1602a.ino
@@ -235,7 +238,6 @@ TvissKin
 			-ArduinoANN
 				FirstMeeting\ArduinoANN\ArduinoANN.ino
 			-ArduinoANNtve
-				-examples
 				-src
 					FirstMeeting\ArduinoANNtve\src\ArduinoANNtve.cpp
 					FirstMeeting\ArduinoANNtve\src\ArduinoANNtve.h
@@ -264,6 +266,9 @@ TvissKin
 				Kesha\KeshaANN\KeshaANN.ino
 			Kesha\Kesha.md
 			Kesha\opredelenie-chisla-sochetanij.jpg
+		-NeuralNet
+			-.ipynb_checkpoints
+			NeuralNet\NeuralNet.ipynb
 		-TCppPrown
 			-examples
 			-src
@@ -274,15 +279,12 @@ TvissKin
 		README.md
 		README.md.backup
 		TvissKin.ppr
+		Тарик Рашид - СОЗДАЁМ НЕЙРОННУЮ СЕТЬ.pdf
 [Open project files]
-0=ArduinoNano33BLESense\LSM9DS1\LSM9DS1.ino
-1=ArduinoNano33BLESense\MP34DT06JTR\MP34DT06JTR.ino
+0=Новый1.txt
 [Selected Project Files]
 Main=
-Selected=ArduinoNano33BLESense\MP34DT06JTR\MP34DT06JTR.ino
-[ArduinoNano33BLESense\LSM9DS1\LSM9DS1.ino]
-TopLine=34
-Caret=1,73
-[ArduinoNano33BLESense\MP34DT06JTR\MP34DT06JTR.ino]
-TopLine=3
-Caret=1,67
+Selected=Новый1.txt
+[Новый1.txt]
+TopLine=1
+Caret=1,1
